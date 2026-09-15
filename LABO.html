@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>バイナリテックLABO</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:
+    "Noto Sans JP",
+    "Yu Gothic",
+    system-ui,
+    sans-serif;
+  color:#263b52;
+  background:#edf8ff;
+  line-height:1.7;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.page{
+  width:min(1500px,calc(100% - 30px));
+  margin:15px auto;
+  background:#fff;
+  border-radius:22px;
+  overflow:hidden;
+
+  box-shadow:
+    0 15px 50px rgba(45,120,170,.13);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+  height:82px;
+  padding:0 42px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  background:rgba(255,255,255,.96);
+  border-bottom:1px solid #e2eef6;
+
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.logo-mark{
+  width:48px;
+  height:48px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:14px;
+
+  color:white;
+  background:linear-gradient(
+    135deg,
+    #20a9ec,
+    #438ee0
+  );
+
+  font-family:monospace;
+  font-size:17px;
+  font-weight:bold;
+
+  box-shadow:4px 4px 0 #ffe57a;
+}
+
+.logo-name{
+  font-size:18px;
+  font-weight:900;
+}
+
+.logo-name span{
+  color:#168fda;
+}
+
+.logo-name small{
+  display:block;
+  color:#8aa3b9;
+  font-size:9px;
+  letter-spacing:.17em;
+}
+
+nav{
+  display:flex;
+  align-items:center;
+  gap:27px;
+
+  font-size:13px;
+  font-weight:800;
+}
+
+nav a{
+  transition:.2s;
+}
+
+nav a:hover{
+  color:#168fda;
+}
+
+.nav-button{
+  padding:9px 16px;
+  border-radius:20px;
+  color:white;
+  background:#209be2;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  min-height:560px;
+
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  align-items:center;
+
+  padding:65px 70px;
+
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      #fff4a4 0,
+      #fff4a4 13%,
+      transparent 14%
+    ),
+    linear-gradient(
+      135deg,
+      #eaf8ff,
+      #fff 60%,
+      #fffdf0
+    );
+}
+
+.badge{
+  display:inline-block;
+
+  padding:7px 14px;
+
+  border-radius:20px;
+
+  color:#1689cf;
+  background:#def4ff;
+
+  font-family:monospace;
+  font-size:12px;
+  font-weight:bold;
+}
+
+.hero h1{
+  margin:20px 0 15px;
+
+  font-size:clamp(45px,6vw,76px);
+  line-height:1.1;
+
+  letter-spacing:-.06em;
+}
+
+.hero h1 span{
+  color:#2099df;
+}
+
+.hero-text{
+  max-width:590px;
+
+  color:#657c91;
+  font-size:16px;
+}
+
+.hero-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+
+  margin-top:28px;
+}
+
+.btn{
+  padding:12px 21px;
+
+  border-radius:12px;
+
+  font-weight:900;
+
+  transition:.2s;
+}
+
+.btn-primary{
+  color:white;
+  background:#209be2;
+
+  box-shadow:5px 5px 0 #ffe47a;
+}
+
+.btn-primary:hover{
+  transform:translateY(2px);
+}
+
+.btn-secondary{
+  color:#168bd2;
+  background:white;
+  border:1px solid #cde8f7;
+}
+
+
+/* =========================
+   HERO IMAGE
+========================= */
+
+.hero-image{
+  position:relative;
+
+  min-height:430px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.hero-circle{
+  position:absolute;
+
+  width:390px;
+  height:390px;
+
+  border-radius:50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #c5edff,
+      #fff2a0
+    );
+}
+
+.hero-image img{
+  position:relative;
+  z-index:2;
+
+  width:min(570px,100%);
+
+  object-fit:contain;
+
+  filter:
+    drop-shadow(
+      0 20px 18px rgba(45,105,145,.13)
+    );
+}
+
+.code-box{
+  position:absolute;
+  z-index:4;
+
+  padding:13px 18px;
+
+  border-radius:13px;
+
+  color:#fff;
+  background:#20364d;
+
+  font-family:monospace;
+  font-size:12px;
+
+  box-shadow:
+    5px 5px 0 rgba(32,155,226,.2);
+}
+
+.code-top{
+  top:25px;
+  right:20px;
+}
+
+.code-bottom{
+  left:10px;
+  bottom:25px;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+section{
+  padding:85px 65px;
+}
+
+.label{
+  color:#2098df;
+
+  font-family:monospace;
+  font-size:12px;
+  font-weight:bold;
+
+  letter-spacing:.1em;
+}
+
+.title{
+  margin:6px 0 12px;
+
+  font-size:40px;
+  line-height:1.2;
+}
+
+.description{
+  max-width:680px;
+  color:#71869a;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+  background:white;
+}
+
+.about-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+
+  gap:18px;
+
+  margin-top:35px;
+}
+
+.card{
+  padding:28px;
+
+  background:white;
+
+  border:1px solid #dfedf6;
+
+  border-radius:22px;
+
+  box-shadow:
+    0 7px 22px rgba(40,120,170,.05);
+
+  transition:.2s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+.icon{
+  width:48px;
+  height:48px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:14px;
+
+  color:#168ed7;
+  background:#e8f7ff;
+
+  font-family:monospace;
+  font-weight:bold;
+  font-size:20px;
+}
+
+.card h3{
+  margin:16px 0 7px;
+}
+
+.card p{
+  margin:0;
+
+  color:#71869a;
+  font-size:13px;
+}
+
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projects{
+  background:#f7fcff;
+}
+
+.project-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+
+  gap:18px;
+
+  margin-top:35px;
+}
+
+.project-number{
+  width:42px;
+  height:42px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:50%;
+
+  color:white;
+  background:#209be2;
+
+  font-family:monospace;
+  font-weight:bold;
+}
+
+.project h3{
+  margin:17px 0 6px;
+}
+
+.project p{
+  margin:0;
+
+  color:#71869a;
+  font-size:13px;
+}
+
+.tag{
+  display:inline-block;
+
+  margin-top:14px;
+
+  padding:5px 10px;
+
+  border-radius:20px;
+
+  color:#168bd2;
+  background:#e8f6ff;
+
+  font-size:10px;
+  font-weight:bold;
+}
+
+
+/* =========================
+   MEMBERS
+========================= */
+
+.members{
+  background:white;
+}
+
+.member-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  gap:22px;
+
+  margin-top:35px;
+}
+
+.member{
+  padding:30px;
+
+  display:flex;
+  align-items:center;
+
+  gap:22px;
+
+  border:1px solid #dfedf6;
+  border-radius:23px;
+
+  background:white;
+
+  box-shadow:
+    0 7px 22px rgba(40,120,170,.05);
+
+  transition:.2s;
+}
+
+.member:hover{
+  transform:translateY(-5px);
+
+  box-shadow:
+    0 12px 30px rgba(40,120,170,.09);
+}
+
+.member-image{
+  width:105px;
+  height:105px;
+
+  flex-shrink:0;
+
+  object-fit:cover;
+
+  border-radius:50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #c4efff,
+      #fff0a0
+    );
+
+  border:5px solid white;
+
+  box-shadow:
+    0 5px 18px rgba(40,120,170,.13);
+}
+
+.binary-avatar{
+  display:grid;
+  place-items:center;
+
+  color:white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #168fda,
+      #50baf0
+    );
+
+  font-family:monospace;
+
+  font-size:23px;
+  font-weight:bold;
+}
+
+.member-name{
+  margin:0;
+  font-size:25px;
+}
+
+.member-role{
+  color:#2098df;
+
+  font-size:12px;
+  font-weight:bold;
+}
+
+.member-text{
+  margin-top:7px;
+
+  color:#71869a;
+  font-size:12px;
+}
+
+.member-link{
+  display:inline-block;
+
+  margin-top:10px;
+
+  padding:5px 11px;
+
+  border-radius:15px;
+
+  color:#168bd2;
+  background:#e8f6ff;
+
+  font-size:10px;
+  font-weight:bold;
+}
+
+.member-link:hover{
+  color:white;
+  background:#209be2;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills{
+  background:#f7fcff;
+}
+
+.skill-box{
+  margin-top:35px;
+
+  padding:28px;
+
+  border:1px dashed #b9dcf2;
+  border-radius:22px;
+
+  background:white;
+}
+
+.skill-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.skill{
+  padding:8px 14px;
+
+  border-radius:20px;
+
+  color:#168bd1;
+  background:#e8f6ff;
+
+  font-family:monospace;
+
+  font-size:12px;
+  font-weight:bold;
+}
+
+
+/* =========================
+   LINKS
+========================= */
+
+.links{
+  background:white;
+}
+
+.link-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:18px;
+
+  margin-top:35px;
+}
+
+.link-card{
+  padding:28px;
+
+  border-radius:22px;
+
+  border:1px solid #dfedf6;
+
+  background:white;
+
+  transition:.2s;
+}
+
+.link-card:hover{
+  transform:translateY(-5px);
+
+  color:white;
+  background:#209be2;
+}
+
+.link-icon{
+  font-family:monospace;
+
+  color:#2098df;
+
+  font-size:28px;
+}
+
+.link-card:hover .link-icon{
+  color:white;
+}
+
+.link-card h3{
+  margin:12px 0 3px;
+}
+
+.link-card p{
+  margin:0;
+
+  color:#71869a;
+
+  font-size:12px;
+}
+
+.link-card:hover p{
+  color:#e9f7ff;
+}
+
+.link-arrow{
+  display:inline-block;
+
+  margin-top:12px;
+
+  font-size:12px;
+  font-weight:bold;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  padding:22px;
+
+  text-align:center;
+
+  color:white;
+
+  background:
+    linear-gradient(
+      90deg,
+      #49afea,
+      #3196dc
+    );
+
+  font-size:12px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:950px){
+
+  nav{
+    gap:15px;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    padding:55px 40px;
+  }
+
+  .hero-image{
+    margin-top:25px;
+  }
+
+  .about-grid,
+  .project-grid,
+  .link-grid{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media(max-width:700px){
+
+  .page{
+    width:100%;
+    margin:0;
+    border-radius:0;
+  }
+
+  header{
+    padding:0 20px;
+  }
+
+  nav{
+    display:none;
+  }
+
+  section{
+    padding:65px 25px;
+  }
+
+  .hero{
+    padding:50px 25px;
+  }
+
+  .hero h1{
+    font-size:46px;
+  }
+
+  .hero-circle{
+    width:300px;
+    height:300px;
+  }
+
+  .code-box{
+    display:none;
+  }
+
+  .about-grid,
+  .project-grid,
+  .member-grid,
+  .link-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:430px){
+
+  .hero h1{
+    font-size:39px;
+  }
+
+  .title{
+    font-size:32px;
+  }
+
+  .member{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+</style>
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+<!-- ==================================
+     HEADER
+================================== -->
+
+<header>
+
+<a href="#home" class="logo">
+
+<div class="logo-mark">
+&lt;/&gt;
+</div>
+
+<div class="logo-name">
+
+バイナリ<span>テック</span>LABO
+
+<small>
+BINARY TECH LABO
+</small>
+
+</div>
+
+</a>
+
+
+<nav>
+
+<a href="#home">
+HOME
+</a>
+
+<a href="#about">
+ABOUT
+</a>
+
+<a href="#projects">
+PROJECTS
+</a>
+
+<a href="#members">
+MEMBERS
+</a>
+
+<a href="#skills">
+SKILLS
+</a>
+
+<a href="#links" class="nav-button">
+LINKS
+</a>
+
+</nav>
+
+</header>
+
+
+
+<!-- ==================================
+     HERO
+================================== -->
+
+<section class="hero" id="home">
+
+<div>
+
+<span class="badge">
+BINARY TECH LABO / GROUP
+</span>
+
+
+<h1>
+つくるって、<br>
+<span>たのしい。</span>
+</h1>
+
+
+<p class="hero-text">
+
+バイナリテックLABOは、
+プログラミングやWeb開発などを
+楽しみながら活動する開発グループです。
+
+<br><br>
+
+「あったらいいな」を形にして、
+2人でさまざまなプロジェクトに
+挑戦しています。
+
+</p>
+
+
+<div class="hero-buttons">
+
+<a
+href="#projects"
+class="btn btn-primary"
+>
+PROJECTS →
+</a>
+
+<a
+href="#members"
+class="btn btn-secondary"
+>
+メンバーを見る
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="hero-image">
+
+<div class="hero-circle"></div>
+
+
+<div class="code-box code-top">
+&lt;LABO&gt;<br>
+create();<br>
+learn();<br>
+enjoy();
+</div>
+
+
+<!-- LABOメイン画像 -->
+<img
+src="labo.png"
+alt="バイナリテックLABO"
+>
+
+
+<div class="code-box code-bottom">
+01001001<br>
+01001100<br>
+01000001
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================
+     ABOUT
+================================== -->
+
+<section class="about" id="about">
+
+<div class="label">
+01 / ABOUT
+</div>
+
+<h2 class="title">
+バイナリテックLABOとは？
+</h2>
+
+<p class="description">
+
+バイナリテックLABOは、
+プログラミングやWeb開発を中心に
+活動している開発グループです。
+
+メンバーそれぞれのアイデアを大切にし、
+Webサイトやツール、プログラムなどを
+制作しています。
+
+</p>
+
+
+<div class="about-grid">
+
+
+<div class="card">
+
+<div class="icon">
+&lt;/&gt;
+</div>
+
+<h3>
+開発する
+</h3>
+
+<p>
+WebサイトやWebアプリ、
+プログラムなどを制作します。
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">
+✦
+</div>
+
+<h3>
+挑戦する
+</h3>
+
+<p>
+新しい技術やプログラミング言語にも
+積極的に挑戦します。
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">
+∞
+</div>
+
+<h3>
+自由につくる
+</h3>
+
+<p>
+「面白そう」をきっかけに、
+自由なアイデアを形にします。
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================
+     PROJECTS
+================================== -->
+
+<section class="projects" id="projects">
+
+<div class="label">
+02 / PROJECTS
+</div>
+
+<h2 class="title">
+制作物
+</h2>
+
+<p class="description">
+バイナリテックLABOで制作している
+プロジェクトです。
+</p>
+
+
+<div class="project-grid">
+
+
+<div class="card project">
+
+<div class="project-number">
+01
+</div>
+
+<h3>
+素数検索ツール
+</h3>
+
+<p>
+素数を検索・計算する
+Webツール。
+</p>
+
+<span class="tag">
+JavaScript / Python
+</span>
+
+</div>
+
+
+<div class="card project">
+
+<div class="project-number">
+02
+</div>
+
+<h3>
+Web Tools
+</h3>
+
+<p>
+ブラウザから使える
+便利なWebツールを制作。
+</p>
+
+<span class="tag">
+HTML / CSS / JS
+</span>
+
+</div>
+
+
+<div class="card project">
+
+<div class="project-number">
+03
+</div>
+
+<h3>
+Data Lab
+</h3>
+
+<p>
+データ処理や計算などを
+実験するプロジェクト。
+</p>
+
+<span class="tag">
+DATA
+</span>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================
+     MEMBERS
+================================== -->
+
+<section class="members" id="members">
+
+<div class="label">
+03 / MEMBERS
+</div>
+
+<h2 class="title">
+メンバー
+</h2>
+
+<p class="description">
+バイナリテックLABOで活動している
+2人のメンバーです。
+</p>
+
+
+<div class="member-grid">
+
+
+<!-- あお -->
+
+<article class="member">
+
+<img
+src="ao.png"
+alt="あお"
+class="member-image"
+>
+
+<div>
+
+<h3 class="member-name">
+あお
+</h3>
+
+<div class="member-role">
+DEVELOPER
+</div>
+
+<p class="member-text">
+Web開発 / Programming
+</p>
+
+
+<!-- あおのホームページ -->
+<a
+href="ao.html"
+class="member-link"
+>
+あおのホームページ ↗
+</a>
+
+</div>
+
+</article>
+
+
+
+<!-- バイナリ -->
+
+<article class="member">
+
+<img
+src="by.png"
+alt="バイナリ"
+class="member-image"
+>
+
+<div>
+
+<h3 class="member-name">
+バイナリ
+</h3>
+
+<div class="member-role">
+DEVELOPER
+</div>
+
+<p class="member-text">
+Web開発 / Programming
+</p>
+
+
+<!-- あおのホームページ -->
+<a
+href="https://bainarinoakaunto.github.io/bainariweb/"
+class="member-link"
+>
+バイナリのホームページ ↗
+</a>
+
+</div>
+
+
+</section>
+
+
+
+<!-- ==================================
+     SKILLS
+================================== -->
+
+<section class="skills" id="skills">
+
+<div class="label">
+04 / TECHNOLOGY
+</div>
+
+<h2 class="title">
+Technology
+</h2>
+
+<p class="description">
+LABOで使用している技術です。
+</p>
+
+
+<div class="skill-box">
+
+<div class="skill-list">
+
+<span class="skill">HTML</span>
+<span class="skill">CSS</span>
+<span class="skill">JavaScript</span>
+<span class="skill">Python</span>
+<span class="skill">TypeScript</span>
+<span class="skill">Git</span>
+<span class="skill">GitHub</span>
+<span class="skill">React</span>
+<span class="skill">Node.js</span>
+<span class="skill">Linux</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================
+     LINKS
+================================== -->
+
+<section class="links" id="links">
+
+<div class="label">
+05 / LINKS
+</div>
+
+<h2 class="title">
+Links
+</h2>
+
+<p class="description">
+バイナリテックLABOとメンバーの
+各ページ・アカウントです。
+</p>
+
+
+<div class="link-grid">
+
+
+<!-- LABOホームページ -->
+
+<a
+href=""
+target="_blank"
+rel="noopener noreferrer"
+class="link-card"
+>
+
+<div class="link-icon">
+⌂
+</div>
+
+<h3>
+LABOホームページ
+</h3>
+
+<p>
+バイナリテックLABO公式ホームページ
+</p>
+
+<span class="link-arrow">
+サイトを開く ↗
+</span>
+
+</a>
+
+
+
+<!-- GitHub -->
+
+<a
+href="https://github.com/bainariTechLABO"
+target="_blank"
+rel="noopener noreferrer"
+class="link-card"
+>
+
+<div class="link-icon">
+&lt;/&gt;
+</div>
+
+<h3>
+GitHub
+</h3>
+
+<p>
+ソースコード・プロジェクト
+</p>
+
+<span class="link-arrow">
+GitHubを開く ↗
+</span>
+
+</a>
+
+
+
+<!-- あお -->
+
+<a
+href="ao.html"
+class="link-card"
+>
+
+<div class="link-icon">
+AO
+</div>
+
+<h3>
+あおのホームページ
+</h3>
+
+<p>
+メンバー「あお」のページ
+</p>
+
+<span class="link-arrow">
+ページを見る ↗
+</span>
+
+</a>
+
+
+
+<!-- バイナリ -->
+
+<a
+href="https://bainarinoakaunto.github.io/bainariweb/"
+class="link-card"
+>
+
+<div class="link-icon">
+01
+</div>
+
+<h3>
+バイナリのページ
+</h3>
+
+<p>
+メンバー「バイナリ」のページ
+</p>
+
+<span class="link-arrow">
+ページを見る ↗
+</span>
+
+</a>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================
+     FOOTER
+================================== -->
+
+<footer>
+
+© 2026 Binary Tech LABO
+
+<br>
+
+Let's create something interesting.
+
+</footer>
+
+
+</div>
+
+</body>
+</html>

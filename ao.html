@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>あお | AO</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:#eef8ff;
+  color:#253b55;
+  font-family:
+    "Noto Sans JP",
+    "Yu Gothic",
+    system-ui,
+    sans-serif;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+
+/* =================================
+   PAGE
+================================= */
+
+.page{
+  width:min(1490px,calc(100% - 30px));
+  margin:15px auto;
+
+  background:white;
+
+  border-radius:18px;
+
+  overflow:hidden;
+
+  box-shadow:
+    0 10px 40px rgba(42,111,160,.12);
+}
+
+
+/* =================================
+   HEADER
+================================= */
+
+header{
+  height:86px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:0 38px;
+
+  border-bottom:1px solid #e4f0f8;
+
+  background:rgba(255,255,255,.96);
+}
+
+.logo{
+  color:#248bd8;
+
+  font-size:30px;
+  font-weight:900;
+
+  line-height:1;
+}
+
+.logo small{
+  display:block;
+
+  margin-top:6px;
+
+  text-align:center;
+
+  color:#55a9df;
+
+  font-size:10px;
+  letter-spacing:.2em;
+}
+
+nav{
+  display:flex;
+  align-items:center;
+
+  gap:45px;
+
+  font-size:16px;
+  font-weight:800;
+}
+
+nav a{
+  position:relative;
+
+  padding:30px 0;
+
+  transition:.2s;
+}
+
+nav a:hover{
+  color:#168fe0;
+}
+
+nav a.active{
+  color:#168fe0;
+}
+
+nav a.active::after{
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  right:0;
+  bottom:0;
+
+  height:3px;
+
+  background:#168fe0;
+}
+
+.code-icon{
+  width:50px;
+  height:50px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:50%;
+
+  color:white;
+
+  background:#27a9e8;
+
+  font-family:monospace;
+
+  font-size:21px;
+  font-weight:bold;
+}
+
+
+/* =================================
+   MAIN LAYOUT
+================================= */
+
+.main{
+  display:grid;
+
+  grid-template-columns:390px 1fr;
+}
+
+
+/* =================================
+   SIDEBAR
+================================= */
+
+.sidebar{
+  padding:40px 48px 60px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f3faff 0%,
+      #f7fcff 100%
+    );
+
+  border-right:1px solid #e1eef7;
+}
+
+.avatar-wrap{
+  width:210px;
+  height:210px;
+
+  margin:0 auto 18px;
+
+  padding:9px;
+
+  border-radius:50%;
+
+  background:white;
+
+  box-shadow:
+    0 7px 25px rgba(57,140,195,.15);
+}
+
+.avatar{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  border-radius:50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #bcecff,
+      #fff1a1
+    );
+}
+
+.name{
+  margin:0;
+
+  text-align:center;
+
+  color:#208bd8;
+
+  font-size:43px;
+  font-weight:900;
+}
+
+.name-en{
+  margin-top:-3px;
+
+  text-align:center;
+
+  color:#299ce4;
+
+  font-size:17px;
+  font-weight:700;
+}
+
+
+/* PROFILE INFO */
+
+.info{
+  margin-top:30px;
+}
+
+.info-row{
+  display:flex;
+
+  align-items:center;
+
+  gap:14px;
+
+  padding:13px 0;
+
+  border-bottom:1px solid #e2eef6;
+
+  font-size:14px;
+  font-weight:700;
+}
+
+.info-icon{
+  width:29px;
+  height:29px;
+
+  display:grid;
+  place-items:center;
+
+  flex-shrink:0;
+
+  color:#208bd8;
+
+  font-size:18px;
+}
+
+
+/* GITHUB CARD */
+
+.github-card{
+  margin-top:28px;
+
+  padding:22px;
+
+  background:white;
+
+  border:1px solid #e1edf5;
+
+  border-radius:17px;
+
+  box-shadow:
+    0 5px 18px rgba(39,125,176,.05);
+}
+
+.github-top{
+  display:flex;
+  align-items:center;
+
+  gap:13px;
+}
+
+.github-logo{
+  width:46px;
+  height:46px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:50%;
+
+  color:white;
+  background:#172333;
+
+  font-size:23px;
+  font-weight:bold;
+}
+
+.github-title{
+  font-size:18px;
+  font-weight:900;
+}
+
+.github-user{
+  color:#218dde;
+
+  font-size:14px;
+}
+
+.github-button{
+  display:block;
+
+  margin-top:15px;
+
+  padding:10px;
+
+  text-align:center;
+
+  color:white;
+
+  background:#3d9be5;
+
+  border-radius:20px;
+
+  font-size:14px;
+  font-weight:900;
+}
+
+.github-button:hover{
+  background:#2189d2;
+}
+
+
+/* SNS */
+
+.sns{
+  margin-top:28px;
+}
+
+.sns-title{
+  margin-bottom:12px;
+
+  font-size:17px;
+  font-weight:900;
+}
+
+.sns-links{
+  display:flex;
+  gap:12px;
+}
+
+.sns-link{
+  width:48px;
+  height:48px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:50%;
+
+  color:#21384f;
+
+  background:#e8f4ff;
+
+  font-size:18px;
+  font-weight:900;
+
+  transition:.2s;
+}
+
+.sns-link:hover{
+  transform:translateY(-3px);
+
+  color:white;
+  background:#2696df;
+}
+
+
+/* =================================
+   CONTENT
+================================= */
+
+.content{
+  min-width:0;
+
+  padding:55px 55px 0;
+}
+
+
+/* =================================
+   HERO
+================================= */
+
+.hero{
+  min-height:455px;
+
+  display:grid;
+
+  grid-template-columns:.72fr 1.28fr;
+
+  align-items:center;
+
+  gap:25px;
+}
+
+.quote{
+  color:#4eaef0;
+
+  font-size:46px;
+  font-weight:900;
+
+  line-height:.5;
+}
+
+.hero h1{
+  margin:20px 0 17px;
+
+  color:#263c57;
+
+  font-size:54px;
+
+  line-height:1.25;
+}
+
+.hero h1 span{
+  color:#238ddd;
+}
+
+.hero-text{
+  max-width:460px;
+
+  color:#263c57;
+
+  font-size:15px;
+  line-height:2;
+}
+
+.hero-art{
+  position:relative;
+
+  height:450px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+}
+
+.hero-circle{
+  position:absolute;
+
+  width:350px;
+  height:350px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      #fff3a0,
+      #fff8c9
+    );
+
+  z-index:0;
+}
+
+.hero-art img{
+  position:relative;
+
+  z-index:1;
+
+  width:100%;
+  height:100%;
+
+  object-fit:contain;
+}
+
+.speech{
+  position:absolute;
+
+  right:10px;
+  top:20px;
+
+  z-index:3;
+
+  padding:18px 25px;
+
+  border:2px solid #278fdc;
+
+  border-radius:50%;
+
+  background:white;
+
+  color:#248bd8;
+
+  font-size:16px;
+  font-weight:800;
+
+  transform:rotate(-4deg);
+}
+
+.speech::after{
+  content:"";
+
+  position:absolute;
+
+  left:15px;
+  bottom:-19px;
+
+  width:28px;
+  height:28px;
+
+  background:white;
+
+  border-left:2px solid #278fdc;
+  border-bottom:2px solid #278fdc;
+
+  transform:skew(-20deg) rotate(-15deg);
+}
+
+
+/* =================================
+   INTRO CARDS
+================================= */
+
+.intro-cards{
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:14px;
+
+  margin-bottom:35px;
+}
+
+.intro-card{
+  padding:19px;
+
+  text-align:center;
+
+  background:white;
+
+  border:1px solid #e4eef5;
+
+  border-radius:17px;
+
+  box-shadow:
+    0 5px 18px rgba(47,127,178,.05);
+}
+
+.intro-icon{
+  margin-bottom:7px;
+
+  color:#208dde;
+
+  font-size:27px;
+}
+
+.intro-card strong{
+  display:block;
+
+  font-size:15px;
+}
+
+.intro-card span{
+  color:#657a91;
+
+  font-size:11px;
+}
+
+
+/* =================================
+   SECTION TITLE
+================================= */
+
+.section-title{
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  margin:28px 0 16px;
+
+  color:#208bd8;
+
+  font-size:21px;
+  font-weight:900;
+}
+
+.section-title::before{
+  content:"//";
+
+  color:#66baf0;
+
+  font-family:monospace;
+
+  font-size:24px;
+}
+
+
+/* =================================
+   PROJECTS
+================================= */
+
+.project-layout{
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:14px;
+}
+
+.project{
+  min-height:155px;
+
+  padding:16px;
+
+  border:1px solid #e3eef6;
+
+  border-radius:17px;
+
+  background:white;
+
+  box-shadow:
+    0 5px 18px rgba(47,127,178,.05);
+
+  transition:.2s;
+}
+
+.project:hover{
+  transform:translateY(-4px);
+
+  box-shadow:
+    0 10px 25px rgba(47,127,178,.1);
+}
+
+.project-number{
+  display:inline-grid;
+
+  width:32px;
+  height:32px;
+
+  place-items:center;
+
+  border-radius:50%;
+
+  color:white;
+
+  background:#258fdb;
+
+  font-size:12px;
+  font-weight:bold;
+}
+
+.project h3{
+  margin:9px 0 4px;
+
+  font-size:16px;
+}
+
+.project p{
+  margin:0;
+
+  color:#657a91;
+
+  font-size:11px;
+}
+
+.project-tag{
+  display:inline-block;
+
+  margin-top:8px;
+
+  padding:3px 8px;
+
+  border-radius:20px;
+
+  color:#248bd8;
+
+  background:#eaf6ff;
+
+  font-size:10px;
+  font-weight:bold;
+}
+
+
+/* =================================
+   SKILLS
+================================= */
+
+.skills{
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:8px;
+
+  padding:14px;
+
+  border:1px dashed #b9dcf3;
+
+  border-radius:17px;
+}
+
+.skill{
+  padding:7px 12px;
+
+  border-radius:20px;
+
+  color:#258bd4;
+
+  background:#eaf6ff;
+
+  font-family:monospace;
+
+  font-size:11px;
+  font-weight:bold;
+}
+
+
+/* =================================
+   MORE
+================================= */
+
+.more{
+  display:flex;
+
+  justify-content:center;
+
+  padding:17px 0 20px;
+}
+
+.more a{
+  padding:8px 30px;
+
+  border:1px solid #4aa6e7;
+
+  border-radius:22px;
+
+  color:#258bd4;
+
+  font-size:13px;
+  font-weight:bold;
+}
+
+.more a:hover{
+  color:white;
+  background:#258bd4;
+}
+
+
+/* =================================
+   FOOTER
+================================= */
+
+footer{
+  margin-top:0;
+
+  padding:12px;
+
+  text-align:center;
+
+  color:white;
+
+  background:
+    linear-gradient(
+      90deg,
+      #4bb0ed,
+      #3d9de0
+    );
+
+  font-size:12px;
+}
+
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media(max-width:1050px){
+
+  .main{
+    grid-template-columns:300px 1fr;
+  }
+
+  .sidebar{
+    padding:35px 28px;
+  }
+
+  .content{
+    padding:40px 30px 0;
+  }
+
+  nav{
+    gap:20px;
+  }
+
+  .hero h1{
+    font-size:42px;
+  }
+
+}
+
+
+@media(max-width:800px){
+
+  .page{
+    width:100%;
+
+    margin:0;
+
+    border-radius:0;
+  }
+
+  header{
+    padding:0 20px;
+  }
+
+  nav{
+    display:none;
+  }
+
+  .main{
+    display:block;
+  }
+
+  .sidebar{
+    border-right:0;
+
+    border-bottom:1px solid #e1eef7;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+
+    text-align:left;
+  }
+
+  .hero-art{
+    height:390px;
+  }
+
+  .intro-cards{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .project-layout{
+    grid-template-columns:1fr;
+  }
+
+}
+
+
+@media(max-width:520px){
+
+  .content{
+    padding:35px 18px 0;
+  }
+
+  .sidebar{
+    padding:30px 20px 40px;
+  }
+
+  .avatar-wrap{
+    width:170px;
+    height:170px;
+  }
+
+  .name{
+    font-size:37px;
+  }
+
+  .hero h1{
+    font-size:39px;
+  }
+
+  .hero-art{
+    height:320px;
+  }
+
+  .hero-circle{
+    width:250px;
+    height:250px;
+  }
+
+  .speech{
+    right:0;
+
+    padding:12px 17px;
+
+    font-size:12px;
+  }
+
+  .intro-cards{
+    grid-template-columns:1fr;
+  }
+
+  .code-icon{
+    width:42px;
+    height:42px;
+  }
+
+}
+</style>
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+<!-- =================================
+     HEADER
+================================= -->
+
+<header>
+
+<a href="#home" class="logo">
+あ お
+<small>AO</small>
+</a>
+
+
+<nav>
+
+<a href="#home" class="active">
+HOME
+</a>
+
+<a href="#about">
+ABOUT
+</a>
+
+<a href="#projects">
+PROJECTS
+</a>
+
+<a href="#skills">
+SKILLS
+</a>
+
+<a href="#github">
+GITHUB
+</a>
+
+</nav>
+
+
+<div class="code-icon">
+&lt;/&gt;
+</div>
+
+</header>
+
+
+
+<div class="main">
+
+
+<!-- =================================
+     SIDEBAR
+================================= -->
+
+<aside class="sidebar">
+
+
+<div class="avatar-wrap">
+
+<!-- あおのアイコン画像 -->
+<img
+src="ao.png"
+alt="あお"
+class="avatar"
+>
+
+</div>
+
+
+<h2 class="name">
+あお
+</h2>
+
+<div class="name-en">
+AO
+</div>
+
+
+<div class="info">
+
+<div class="info-row">
+
+<div class="info-icon">
+♙
+</div>
+
+<span>
+エンジニア / 開発が好きな人
+</span>
+
+</div>
+
+
+<div class="info-row">
+
+<div class="info-icon">
+⌖
+</div>
+
+<span>
+どこかの世界
+</span>
+
+</div>
+
+
+<div class="info-row">
+
+<div class="info-icon">
+▣
+</div>
+
+<span>
+いつも新しいことを学んでいます
+</span>
+
+</div>
+
+</div>
+
+
+
+<!-- GITHUB -->
+
+<div class="github-card">
+
+<div class="github-top">
+
+<div class="github-logo">
+●
+</div>
+
+<div>
+
+<div class="github-title">
+GitHub
+</div>
+
+<div class="github-user">
+@ao-developer
+</div>
+
+</div>
+
+</div>
+
+
+<a
+href="https://github.com/ao334"
+target="_blank"
+rel="noopener noreferrer"
+class="github-button"
+>
+GitHubを開く ↗
+</a>
+
+</div>
+
+
+
+<!-- SNS -->
+
+<div class="sns">
+
+<div class="sns-title">
+SNS / Link
+</div>
+
+
+<div class="sns-links">
+
+<a
+href="#"
+class="sns-link"
+aria-label="GitHub"
+>
+●
+</a>
+
+<a
+href="#"
+class="sns-link"
+aria-label="X"
+>
+𝕏
+</a>
+
+<a
+href="#"
+class="sns-link"
+aria-label="Website"
+>
+&lt;/&gt;
+</a>
+
+</div>
+
+</div>
+
+
+</aside>
+
+
+
+<!-- =================================
+     CONTENT
+================================= -->
+
+<main class="content" id="home">
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+
+<div>
+
+<div class="quote">
+//
+</div>
+
+
+<h1>
+つくるって、<br>
+<span>たのしい。</span>
+</h1>
+
+
+<p class="hero-text">
+
+あおです。<br>
+
+プログラミングやWeb開発が好きで、
+「こんなの作ってみたい！」を
+形にするのが楽しいです。
+
+<br>
+
+日々学びながら、
+いろいろなものを作っています。
+
+</p>
+
+</div>
+
+
+
+<div class="hero-art">
+
+<div class="hero-circle"></div>
+
+
+<!-- あおの全身イラスト -->
+<img
+src="ao.png"
+alt="あおのイラスト"
+>
+
+
+<div class="speech">
+つくるって、<br>
+たのしい。
+</div>
+
+</div>
+
+
+</section>
+
+
+
+<!-- INTRO -->
+
+<div class="intro-cards">
+
+
+<div class="intro-card">
+
+<div class="intro-icon">
+&lt;/&gt;
+</div>
+
+<strong>
+開発
+</strong>
+
+<span>
+Web / アプリ<br>
+ツール開発など
+</span>
+
+</div>
+
+
+<div class="intro-card">
+
+<div class="intro-icon">
+♧
+</div>
+
+<strong>
+学ぶ
+</strong>
+
+<span>
+新しい技術を学び<br>
+成長することが好き
+</span>
+
+</div>
+
+
+<div class="intro-card">
+
+<div class="intro-icon">
+♡
+</div>
+
+<strong>
+つくる
+</strong>
+
+<span>
+アイデアを形にして<br>
+みんなに届けたい
+</span>
+
+</div>
+
+</div>
+
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<div class="section-title">
+PROJECTS
+</div>
+
+
+<div class="project-layout">
+
+
+<article class="project">
+
+<div class="project-number">
+01
+</div>
+
+<h3>
+Prime Search
+</h3>
+
+<p>
+素数を検索・計算する
+Webツール。
+</p>
+
+<span class="project-tag">
+Web App
+</span>
+
+</article>
+
+
+
+<article class="project">
+
+<div class="project-number">
+02
+</div>
+
+<h3>
+Data Lab
+</h3>
+
+<p>
+データを整理・分析する
+実験プロジェクト。
+</p>
+
+<span class="project-tag">
+Data
+</span>
+
+</article>
+
+
+
+<article class="project">
+
+<div class="project-number">
+03
+</div>
+
+<h3>
+Code Tools
+</h3>
+
+<p>
+日常で役立つツールを
+いろいろ作っています。
+</p>
+
+<span class="project-tag">
+Tools
+</span>
+
+</article>
+
+
+</div>
+
+</section>
+
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<div class="section-title">
+SKILLS
+</div>
+
+
+<div class="skills">
+
+<span class="skill">
+HTML
+</span>
+
+<span class="skill">
+CSS
+</span>
+
+<span class="skill">
+JavaScript
+</span>
+
+<span class="skill">
+Python
+</span>
+
+<span class="skill">
+Git
+</span>
+
+<span class="skill">
+Docker
+</span>
+
+<span class="skill">
+Linux
+</span>
+
+<span class="skill">
+TypeScript
+</span>
+
+<span class="skill">
+React
+</span>
+
+</div>
+
+
+<div class="more">
+
+<a href="#about">
+もっと見る　→
+</a>
+
+</div>
+
+</section>
+
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="section-title">
+ABOUT
+</div>
+
+<div class="project">
+
+<h3>
+あおについて
+</h3>
+
+<p>
+
+プログラミングやWeb開発を中心に、
+新しい技術を試したり、
+自分で考えたものを作ったりしています。
+
+「難しそう」よりも
+「やってみよう」を大切にしています。
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- GITHUB -->
+
+<section id="github">
+
+<div class="section-title">
+GITHUB
+</div>
+
+
+<div class="project">
+
+<h3>
+あおのGitHub
+</h3>
+
+<p>
+制作したプログラムや
+プロジェクトを公開しています。
+</p>
+
+
+<a
+href="https://github.com/ao334"
+target="_blank"
+rel="noopener noreferrer"
+class="github-button"
+>
+GitHubを開く ↗
+</a>
+
+</div>
+
+</section>
+
+
+</main>
+
+</div>
+
+
+
+<!-- =================================
+     FOOTER
+================================= -->
+
+<footer>
+
+✦　© 2026 AO. All rights reserved.　✦
+
+</footer>
+
+
+</div>
+
+
+<script>
+
+/* 現在のページ位置に応じて
+   メニューをハイライト */
+
+const links =
+document.querySelectorAll("nav a");
+
+const sections =
+document.querySelectorAll("main section");
+
+window.addEventListener("scroll",()=>{
+
+  let current = "";
+
+  sections.forEach(section=>{
+
+    const top =
+      section.offsetTop - 150;
+
+    if(
+      window.scrollY >= top
+    ){
+      current = section.id;
+    }
+
+  });
+
+  links.forEach(link=>{
+
+    link.classList.remove("active");
+
+    if(
+      link.getAttribute("href")
+      === "#" + current
+    ){
+      link.classList.add("active");
+    }
+
+  });
+
+});
+
+</script>
+
+
+</body>
+</html>
