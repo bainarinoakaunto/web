@@ -36,8 +36,10 @@ body {
         "Segoe UI",
         "Noto Sans JP",
         sans-serif;
+
     color: var(--text);
     background: var(--white);
+
     line-height: 1.8;
     overflow-x: hidden;
 }
@@ -58,10 +60,13 @@ button {
 
 .header {
     position: fixed;
+
     top: 0;
     left: 0;
+
     width: 100%;
     height: 88px;
+
     z-index: 2000;
 
     display: flex;
@@ -69,6 +74,7 @@ button {
     justify-content: space-between;
 
     padding: 0 4vw;
+
     color: var(--white);
 
     transition:
@@ -80,8 +86,11 @@ button {
 
 .header.scrolled {
     height: 70px;
+
     color: var(--black);
+
     background: rgba(255,255,255,.94);
+
     backdrop-filter: blur(15px);
 
     box-shadow:
@@ -95,13 +104,16 @@ button {
 
 .logo {
     position: relative;
+
     z-index: 10;
 
     display: flex;
     align-items: center;
+
     gap: 13px;
 
     font-weight: 900;
+
     letter-spacing: .06em;
 }
 
@@ -116,6 +128,7 @@ button {
     border-radius: 50%;
 
     color: var(--white);
+
     background: var(--black);
 
     font-size: 15px;
@@ -127,6 +140,7 @@ button {
 
 .header.scrolled .logo-mark {
     background: var(--purple);
+
     transform: rotate(180deg);
 }
 
@@ -142,6 +156,7 @@ button {
 .header-right {
     display: flex;
     align-items: center;
+
     gap: 25px;
 }
 
@@ -160,6 +175,7 @@ button {
 
     display: flex;
     align-items: center;
+
     gap: 5px;
 
     padding: 5px;
@@ -177,6 +193,7 @@ button {
 
 .language-switcher button {
     border: 0;
+
     background: transparent;
 
     padding: 7px 11px;
@@ -184,7 +201,9 @@ button {
     border-radius: 999px;
 
     font-size: 11px;
+
     font-weight: 700;
+
     letter-spacing: .04em;
 
     color: var(--sub);
@@ -200,6 +219,7 @@ button {
 
 .language-switcher button.active {
     background: var(--black);
+
     color: var(--white);
 }
 
@@ -215,6 +235,7 @@ button {
     height: 48px;
 
     border: 0;
+
     background: transparent;
 
     cursor: pointer;
@@ -231,6 +252,7 @@ button {
 
     display: flex;
     flex-direction: column;
+
     gap: 7px;
 }
 
@@ -270,6 +292,7 @@ button {
 
 .menu-overlay {
     position: fixed;
+
     inset: 0;
 
     z-index: 1900;
@@ -308,6 +331,7 @@ button {
 .menu-inner {
     width: min(1200px, calc(100% - 100px));
     height: 100%;
+
     margin: auto;
 
     display: flex;
@@ -319,6 +343,7 @@ button {
 
     display: flex;
     flex-direction: column;
+
     gap: 12px;
 }
 
@@ -332,12 +357,15 @@ button {
     color: var(--white);
 
     font-size: clamp(38px, 6vw, 82px);
+
     font-weight: 800;
 
     line-height: 1.05;
+
     letter-spacing: -.04em;
 
     transform: translateY(100%);
+
     opacity: 0;
 
     transition:
@@ -348,6 +376,7 @@ button {
 
 .menu-overlay.open .menu-list a {
     transform: translateY(0);
+
     opacity: 1;
 }
 
@@ -379,10 +408,6 @@ button {
     transition-delay: .44s;
 }
 
-.menu-overlay.open li:nth-child(8) a {
-    transition-delay: .50s;
-}
-
 .menu-list a:hover {
     color: #ff9bd8;
 }
@@ -395,7 +420,9 @@ button {
     color: rgba(255,255,255,.6);
 
     font-size: 11px;
+
     font-weight: 700;
+
     letter-spacing: .2em;
 }
 
@@ -435,6 +462,7 @@ button {
     content: "";
 
     position: absolute;
+
     inset: 0;
 
     z-index: -1;
@@ -499,7 +527,9 @@ button {
     color: var(--white);
 
     font-size: 14px;
+
     font-weight: 700;
+
     letter-spacing: .08em;
 }
 
@@ -534,10 +564,13 @@ button {
     padding: 7px 15px;
 
     border: 1px solid rgba(255,255,255,.55);
+
     border-radius: 30px;
 
     font-size: 10px;
+
     font-weight: 700;
+
     letter-spacing: .18em;
 }
 
@@ -550,6 +583,7 @@ button {
     line-height: .98;
 
     letter-spacing: -.055em;
+
     font-weight: 900;
 
     text-shadow:
@@ -598,6 +632,7 @@ button {
     gap: 15px;
 
     font-size: 9px;
+
     letter-spacing: .2em;
 
     opacity: .8;
@@ -610,6 +645,94 @@ button {
     height: 1px;
 
     background: currentColor;
+}
+
+
+/* =========================================
+   NEWS
+========================================= */
+
+.news-section {
+    position: relative;
+
+    padding: 110px 0;
+
+    background: var(--gray);
+}
+
+.news-list {
+    margin-top: 60px;
+
+    border-top: 1px solid #ddd;
+}
+
+.news-item {
+    display: grid;
+
+    grid-template-columns: 150px 1fr;
+
+    gap: 35px;
+
+    padding: 35px 0;
+
+    border-bottom: 1px solid #ddd;
+
+    transition:
+        padding .4s ease,
+        background .4s ease;
+}
+
+.news-item:hover {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    background: rgba(255,255,255,.65);
+}
+
+.news-date {
+    color: var(--purple);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: .08em;
+}
+
+.news-content {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 18px;
+}
+
+.news-badge {
+    flex-shrink: 0;
+
+    padding: 4px 10px;
+
+    color: var(--white);
+
+    background: var(--purple);
+
+    border-radius: 20px;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: .08em;
+}
+
+.news-content h3 {
+    color: var(--black);
+
+    font-size: 20px;
+
+    line-height: 1.5;
+
+    font-weight: 800;
 }
 
 
@@ -671,7 +794,9 @@ button {
     color: var(--purple);
 
     font-size: 10px;
+
     font-weight: 800;
+
     letter-spacing: .2em;
 }
 
@@ -686,6 +811,7 @@ button {
     line-height: 1.05;
 
     letter-spacing: -.055em;
+
     font-weight: 900;
 }
 
@@ -713,11 +839,13 @@ button {
     color: var(--sub);
 
     font-size: 16px;
+
     line-height: 2.15;
 }
 
 .brand-message-body strong {
     color: var(--black);
+
     font-weight: 800;
 }
 
@@ -727,89 +855,8 @@ button {
     color: var(--black);
 
     font-size: 20px;
+
     line-height: 1.8;
-
-    font-weight: 800;
-}
-
-
-/* =========================================
-   NEWS
-========================================= */
-
-.news-section {
-    position: relative;
-
-    padding: 110px 0;
-
-    background: var(--gray);
-}
-
-.news-list {
-    margin-top: 60px;
-
-    border-top: 1px solid #ddd;
-}
-
-.news-item {
-    display: grid;
-
-    grid-template-columns: 150px 1fr;
-
-    gap: 35px;
-
-    padding: 35px 0;
-
-    border-bottom: 1px solid #ddd;
-
-    transition:
-        padding .4s ease,
-        background .4s ease;
-}
-
-.news-item:hover {
-    padding-left: 20px;
-    padding-right: 20px;
-
-    background: rgba(255,255,255,.65);
-}
-
-.news-date {
-    color: var(--purple);
-
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: .08em;
-}
-
-.news-content {
-    display: flex;
-
-    align-items: flex-start;
-
-    gap: 18px;
-}
-
-.news-badge {
-    flex-shrink: 0;
-
-    padding: 4px 10px;
-
-    color: var(--white);
-    background: var(--purple);
-
-    border-radius: 20px;
-
-    font-size: 9px;
-    font-weight: 800;
-    letter-spacing: .08em;
-}
-
-.news-content h3 {
-    color: var(--black);
-
-    font-size: 20px;
-    line-height: 1.5;
 
     font-weight: 800;
 }
@@ -841,7 +888,9 @@ button {
     color: var(--purple);
 
     font-size: 10px;
+
     font-weight: 800;
+
     letter-spacing: .2em;
 }
 
@@ -854,6 +903,7 @@ button {
     line-height: 1;
 
     letter-spacing: -.05em;
+
     font-weight: 900;
 }
 
@@ -911,7 +961,9 @@ button {
     color: var(--purple);
 
     font-size: 11px;
+
     font-weight: 800;
+
     letter-spacing: .15em;
 }
 
@@ -921,6 +973,7 @@ button {
     color: var(--black);
 
     font-size: 28px;
+
     font-weight: 900;
 }
 
@@ -928,6 +981,7 @@ button {
     margin-bottom: 12px;
 
     font-size: 22px;
+
     color: var(--black);
 }
 
@@ -993,6 +1047,7 @@ button {
     color: #777785;
 
     font-size: 12px;
+
     font-weight: 800;
 }
 
@@ -1020,9 +1075,120 @@ button {
     border-radius: 20px;
 
     font-size: 9px;
+
     font-weight: 800;
 }
 
+
+
+/* =========================================
+   GROUP PHILOSOPHY
+========================================= */
+
+.group-philosophy {
+    position: relative;
+    padding: 150px 0;
+    color: var(--white);
+    background: #11111b;
+    overflow: hidden;
+}
+
+.group-philosophy::before {
+    content: "BAINARI";
+    position: absolute;
+    right: -20px;
+    top: 45px;
+    color: rgba(255,255,255,.035);
+    font-size: clamp(100px, 18vw, 260px);
+    line-height: .8;
+    font-weight: 900;
+    letter-spacing: -.08em;
+    pointer-events: none;
+}
+
+.group-philosophy-inner {
+    position: relative;
+    z-index: 1;
+    width: min(1100px, calc(100% - 100px));
+    margin: auto;
+}
+
+.group-philosophy-label {
+    margin-bottom: 35px;
+    color: #c47af0;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .2em;
+}
+
+.group-philosophy-title {
+    max-width: 1000px;
+    margin: 0;
+    font-size: clamp(42px, 6vw, 78px);
+    line-height: 1.05;
+    letter-spacing: -.055em;
+    font-weight: 900;
+}
+
+.group-philosophy-title span {
+    background: linear-gradient(90deg, var(--purple-light), var(--pink));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.group-philosophy-body {
+    max-width: 900px;
+    margin-top: 55px;
+    color: #b7b7c3;
+    font-size: 16px;
+    line-height: 2.15;
+}
+
+.group-philosophy-body strong {
+    color: var(--white);
+    font-weight: 900;
+}
+
+.group-philosophy-bottom {
+    margin-top: 45px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,.14);
+    color: var(--white);
+    font-size: 20px;
+    line-height: 1.8;
+    font-weight: 800;
+}
+
+/* =========================================
+   PHILOSOPHY INITIAL COLORS / VISIBILITY FIX
+========================================= */
+.group-philosophy-body,
+.group-philosophy-body p,
+.group-philosophy-bottom {
+    color: #ffffff !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+.group-philosophy-body strong,
+.group-philosophy-body .initial {
+    font-weight: 900 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    background: none !important;
+    background-image: none !important;
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+    -webkit-text-fill-color: currentColor !important;
+}
+.group-philosophy-body .initial { display: inline !important; }
+.group-philosophy-body .initial-b { color:#ff5a7a !important; -webkit-text-fill-color:#ff5a7a !important; }
+.group-philosophy-body .initial-a1 { color:#ffb347 !important; -webkit-text-fill-color:#ffb347 !important; }
+.group-philosophy-body .initial-i1 { color:#ffe45e !important; -webkit-text-fill-color:#ffe45e !important; }
+.group-philosophy-body .initial-n { color:#43d9c3 !important; -webkit-text-fill-color:#43d9c3 !important; }
+.group-philosophy-body .initial-a2 { color:#5cb8ff !important; -webkit-text-fill-color:#5cb8ff !important; }
+.group-philosophy-body .initial-r { color:#b27cff !important; -webkit-text-fill-color:#b27cff !important; }
+.group-philosophy-body .initial-i2 { color:#ff75c8 !important; -webkit-text-fill-color:#ff75c8 !important; }
 
 /* =========================================
    MEMBERS
@@ -1093,7 +1259,9 @@ button {
     color: var(--purple);
 
     font-size: 10px;
+
     font-weight: 800;
+
     letter-spacing: .15em;
 }
 
@@ -1127,6 +1295,7 @@ button {
     border-bottom: 1px solid var(--black);
 
     font-size: 11px;
+
     font-weight: 800;
 }
 
@@ -1172,6 +1341,7 @@ button {
     border-radius: 3px;
 
     font-size: 12px;
+
     font-weight: 700;
 
     transition:
@@ -1235,6 +1405,7 @@ button {
 
 .link-icon {
     font-size: 25px;
+
     font-weight: 900;
 }
 
@@ -1260,6 +1431,7 @@ button {
     margin-top: 25px;
 
     font-size: 10px;
+
     font-weight: 800;
 }
 
@@ -1649,6 +1821,28 @@ footer {
         font-size: 17px;
     }
 
+    .group-philosophy {
+        padding: 90px 0;
+    }
+
+    .group-philosophy-inner {
+        width: calc(100% - 36px);
+    }
+
+    .group-philosophy-title {
+        font-size: 43px;
+    }
+
+    .group-philosophy-body {
+        margin-top: 40px;
+        font-size: 13px;
+        line-height: 2;
+    }
+
+    .group-philosophy-bottom {
+        font-size: 17px;
+    }
+
     .news-section {
         padding: 80px 0;
     }
@@ -1684,6 +1878,7 @@ footer {
 </style>
 </head>
 
+
 <body>
 
 <header class="header" id="header">
@@ -1694,7 +1889,7 @@ footer {
             &lt;/&gt;
         </span>
 
-        <span class="logo-text">
+        <span class="logo-text" data-i18n="logoText">
             バイナリテックLABO
         </span>
 
@@ -1702,34 +1897,22 @@ footer {
 
     <div class="header-right">
 
-        <div
-            class="language-switcher"
-            aria-label="Language"
-            data-i18n-aria="language"
-        >
-
-            <button
-                type="button"
-                data-language="ja"
-                class="active"
-            >
+        <div class="language-switcher" aria-label="Language">
+            <button type="button"
+                    data-language="ja"
+                    class="active">
                 JP
             </button>
 
-            <button
-                type="button"
-                data-language="en"
-            >
+            <button type="button"
+                    data-language="en">
                 EN
             </button>
 
-            <button
-                type="button"
-                data-language="zh-CN"
-            >
+            <button type="button"
+                    data-language="zh-CN">
                 CN
             </button>
-
         </div>
 
         <button
@@ -1762,45 +1945,46 @@ footer {
 
         <div>
 
-            <span
-                class="menu-small"
-                data-i18n="menuSmall"
-            >
+            <span class="menu-small">
                 BINARY TECH LABO
             </span>
 
             <ul class="menu-list">
 
                 <li>
-                    <a href="#home" data-i18n="home">HOME</a>
+                    <a href="#home">HOME</a>
                 </li>
 
                 <li>
-                    <a href="#message" data-i18n="message">MESSAGE</a>
+                    <a href="#news">NEWS</a>
                 </li>
 
                 <li>
-                    <a href="#news" data-i18n="news">NEWS</a>
+                    <a href="#message">MESSAGE</a>
                 </li>
 
                 <li>
-                    <a href="#about" data-i18n="about">ABOUT</a>
+                    <a href="#philosophy">PHILOSOPHY</a>
                 </li>
 
                 <li>
-                    <a href="#projects" data-i18n="projects">PROJECTS</a>
+                    <a href="#about">ABOUT</a>
                 </li>
 
                 <li>
-                    <a href="#members" data-i18n="members">MEMBERS</a>
+                    <a href="#projects">PROJECTS</a>
                 </li>
 
                 <li>
-                    <a href="#skills" data-i18n="technology">TECHNOLOGY</a>
+                    <a href="#members">MEMBERS</a>
                 </li>
 
                 <li>
-                    <a href="#links" data-i18n="links">LINKS</a>
+                    <a href="#skills">TECHNOLOGY</a>
+                </li>
+
+                <li>
+                    <a href="#links">LINKS</a>
                 </li>
 
             </ul>
@@ -1823,30 +2007,21 @@ footer {
 
     <div class="hero-content">
 
-        <div
-            class="hero-label"
-            data-i18n="heroLabel"
-        >
-            BINARY TECH LABO / GROUP
+        <div class="hero-label">
+            BINARY TECH LABO
         </div>
 
-        <h1 data-i18n-html="heroTitle">
+        <h1>
             Technology,<br>
             made interesting.
         </h1>
 
-        <p
-            class="hero-description"
-            data-i18n-html="heroDescription"
-        >
+        <p class="hero-description">
             Webサイトやツール、プログラムなどを制作しています。<br>
             「面白そう」をきっかけに、自由なアイデアを技術で形にします。
         </p>
 
-        <div
-            class="hero-scroll"
-            data-i18n="scroll"
-        >
+        <div class="hero-scroll">
             SCROLL
         </div>
 
@@ -1857,77 +2032,14 @@ footer {
 
         <div>
 
-            <span data-i18n="circleLabel">
+            <span>
                 BINARY TECH LABO
             </span>
 
-            <strong data-i18n="circleStrong">
+            <strong>
                 CREATE.
             </strong>
 
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     BRAND MESSAGE
-========================================= -->
-
-<section class="brand-message" id="message">
-
-    <div class="brand-message-inner reveal">
-
-        <div
-            class="brand-message-label"
-            data-i18n="messageLabel"
-        >
-            BINARY TECH LABO / MESSAGE
-        </div>
-
-        <h2
-            class="brand-message-title"
-            data-i18n-html="messageTitle"
-        >
-            世界を、もっと便利に。<br>
-            <span>そして、もっと面白く。</span>
-        </h2>
-
-        <div class="brand-message-body">
-
-            <p data-i18n-html="messageP1">
-                幅広い業界で、まだ見たことのないアイデアをカタチにし、<br>
-                様々な可能性を切り拓いていく。
-            </p>
-
-            <br>
-
-            <p data-i18n-html="messageP2">
-                必要なのは、自由な発想と、<br>
-                <strong>「やってみたい」をカタチにする情熱。</strong>
-            </p>
-
-            <br>
-
-            <p data-i18n-html="messageP3">
-                テクノロジーの力を使い、<br>
-                <strong>様々な分野で、人を笑顔にする。</strong><br>
-                日常に新しい価値とワクワクを届ける。
-            </p>
-
-        </div>
-
-        <div
-            class="brand-message-final"
-            data-i18n-html="messageFinal"
-        >
-            世界を、より便利に。<br>
-            より楽しくするために。<br><br>
-            様々な可能性を追い求め、<br>
-            様々な分野で人を笑顔にする。<br><br>
-            我々は、これからも挑戦を続けます。
         </div>
 
     </div>
@@ -1945,62 +2057,136 @@ footer {
 
         <div class="reveal">
 
-            <div
-                class="section-label"
-                data-i18n="newsLabel"
-            >
+            <div class="section-label">
                 NEWS
             </div>
 
-            <h2
-                class="section-title"
-                data-i18n="newsTitle"
-            >
+            <h2 class="section-title">
                 お知らせ
             </h2>
 
-            <p
-                class="section-description"
-                data-i18n="newsDescription"
-            >
+            <p class="section-description">
                 バイナリテックLABOからのお知らせです。
             </p>
 
         </div>
 
-        <div
-            class="news-list"
-            id="newsList"
-        >
 
-            <div class="news-item">
+        <div class="news-list">
 
-                <div
-                    class="news-date"
-                    data-i18n="loading"
-                >
-                    LOADING...
+            <article class="news-item reveal">
+
+                <div class="news-date">
+                    2026.09.27
                 </div>
 
                 <div class="news-content">
 
-                    <span
-                        class="news-badge"
-                        data-i18n="loadingBadge"
-                    >
-                        ...
+                    <span class="news-badge">
+                        NEW
                     </span>
 
-                    <h3
-                        data-i18n="newsLoading"
-                    >
-                        お知らせを読み込んでいます...
+                    <h3>
+                        多言語に対応しました
                     </h3>
 
                 </div>
 
-            </div>
+            </article>
 
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     BRAND MESSAGE
+========================================= -->
+
+<section class="brand-message" id="message">
+
+    <div class="brand-message-inner reveal">
+
+        <div class="brand-message-label">
+            BINARY TECH LABO / MESSAGE
+        </div>
+
+        <h2 class="brand-message-title">
+            世界を、もっと便利に。<br>
+            <span>そして、もっと面白く。</span>
+        </h2>
+
+        <div class="brand-message-body">
+
+            <p>
+                幅広い分野で、まだ見たことのないアイデアをカタチにし、<br>
+                新しい可能性を切り拓いていく。
+            </p>
+
+            <br>
+
+            <p>
+                必要なのは、自由な発想と、<br>
+                <strong>「やってみたい」をカタチにする情熱。</strong>
+            </p>
+
+            <br>
+
+            <p>
+                テクノロジーの力を使い、<br>
+                日常に新しい価値とワクワクを届ける。
+            </p>
+
+        </div>
+
+        <div class="brand-message-final">
+            世界を、より便利に。<br>
+            より楽しくするために。<br><br>
+            私たちは、これからも挑戦を続けます。
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     GROUP PHILOSOPHY
+========================================= -->
+
+<section class="group-philosophy" id="philosophy">
+
+    <div class="group-philosophy-inner reveal">
+
+        <h2 class="group-philosophy-title" data-i18n-html="philosophyTitle">
+            技術とアイデアで、<br>
+            <span>可能性をひろげる。</span>
+        </h2>
+
+        <div class="group-philosophy-body">
+            <p data-i18n-html="philosophyP1">
+                BAINARI TECH LABOは、テクノロジーと自由な発想を掛け合わせ、
+                新しいアイデアを <strong class="initial initial-b">B</strong>UILD し、
+                挑戦を <strong class="initial initial-a1">A</strong>DVANCE させながら、
+                新しい価値を <strong class="initial initial-i1">I</strong>NNOVATE する。
+            </p>
+            <br>
+            <p data-i18n-html="philosophyP2">
+                人それぞれが持つ才能や可能性を <strong class="initial initial-n">N</strong>URTURE し、
+                生まれた想いや価値を <strong class="initial initial-a2">A</strong>MPLIFY して、
+                必要とする人へ <strong class="initial initial-r">R</strong>EACH させる。
+                そして、まだ見たことのない体験や新しい可能性を
+                <strong class="initial initial-i2">I</strong>NSPIRE し、
+                さまざまな分野で人を笑顔にする。
+            </p>
+        </div>
+
+        <div class="group-philosophy-bottom" data-i18n-html="philosophyFinal">
+            技術をつくるだけではなく、<br>
+            技術から生まれる可能性を追い求める。<br><br>
+            それが、BAINARI TECH LABOが大切にしている想いです.
         </div>
 
     </div>
@@ -2018,24 +2204,15 @@ footer {
 
         <div class="reveal">
 
-            <div
-                class="section-label"
-                data-i18n="aboutLabel"
-            >
+            <div class="section-label">
                 01 / ABOUT
             </div>
 
-            <h2
-                class="section-title"
-                data-i18n="aboutTitle"
-            >
+            <h2 class="section-title">
                 About LABO
             </h2>
 
-            <p
-                class="section-description"
-                data-i18n="aboutDescription"
-            >
+            <p class="section-description">
                 バイナリテックLABOでは、WebサイトやWebアプリ、
                 プログラムなどを制作しています。
             </p>
@@ -2055,11 +2232,11 @@ footer {
                     &lt;/&gt;
                 </div>
 
-                <h3 data-i18n="develop">
+                <h3>
                     開発する
                 </h3>
 
-                <p data-i18n="developText">
+                <p>
                     WebサイトやWebアプリ、
                     プログラムなどを制作します。
                 </p>
@@ -2077,11 +2254,11 @@ footer {
                     ✦
                 </div>
 
-                <h3 data-i18n="challenge">
+                <h3>
                     挑戦する
                 </h3>
 
-                <p data-i18n="challengeText">
+                <p>
                     新しい技術やプログラミング言語にも
                     積極的に挑戦します。
                 </p>
@@ -2099,11 +2276,11 @@ footer {
                     ∞
                 </div>
 
-                <h3 data-i18n="free">
+                <h3>
                     自由につくる
                 </h3>
 
-                <p data-i18n="freeText">
+                <p>
                     「面白そう」をきっかけに、
                     自由なアイデアを形にします。
                 </p>
@@ -2127,24 +2304,15 @@ footer {
 
         <div class="reveal">
 
-            <div
-                class="section-label"
-                data-i18n="projectsLabel"
-            >
+            <div class="section-label">
                 02 / PROJECTS
             </div>
 
-            <h2
-                class="section-title"
-                data-i18n="projectsTitle"
-            >
+            <h2 class="section-title">
                 Projects
             </h2>
 
-            <p
-                class="section-description"
-                data-i18n="projectsDescription"
-            >
+            <p class="section-description">
                 バイナリテックLABOで制作している
                 プロジェクトです。
             </p>
@@ -2162,11 +2330,11 @@ footer {
 
                 <div>
 
-                    <h3 data-i18n="prime">
+                    <h3>
                         素数検索ツール
                     </h3>
 
-                    <p data-i18n="primeText">
+                    <p>
                         素数を検索・計算するWebツール。
                     </p>
 
@@ -2187,11 +2355,11 @@ footer {
 
                 <div>
 
-                    <h3 data-i18n="webTools">
+                    <h3>
                         Web Tools
                     </h3>
 
-                    <p data-i18n="webToolsText">
+                    <p>
                         ブラウザから使える便利な
                         Webツールを制作。
                     </p>
@@ -2213,11 +2381,11 @@ footer {
 
                 <div>
 
-                    <h3 data-i18n="dataLab">
+                    <h3>
                         Data Lab
                     </h3>
 
-                    <p data-i18n="dataLabText">
+                    <p>
                         データ処理や計算などを
                         実験するプロジェクト。
                     </p>
@@ -2247,24 +2415,15 @@ footer {
 
         <div class="reveal">
 
-            <div
-                class="section-label"
-                data-i18n="membersLabel"
-            >
+            <div class="section-label">
                 03 / MEMBERS
             </div>
 
-            <h2
-                class="section-title"
-                data-i18n="membersTitle"
-            >
+            <h2 class="section-title">
                 Members
             </h2>
 
-            <p
-                class="section-description"
-                data-i18n="membersDescription"
-            >
+            <p class="section-description">
                 バイナリテックLABOで活動している
                 2人のメンバーです。
             </p>
@@ -2278,39 +2437,32 @@ footer {
 
                 <div class="member-content">
 
-                    <span
-                        class="member-role"
-                        data-i18n="developer"
-                    >
+                    <span class="member-role">
                         DEVELOPER
                     </span>
 
-                    <h3 class="member-name">
+                    <h3 class="member-name" data-i18n="aoName">
                         あお
                     </h3>
 
-                    <p
-                        class="member-text"
-                        data-i18n="memberText"
-                    >
+                    <p class="member-text">
                         Web開発 / Programming
                     </p>
 
                     <a
                         href="ao.html"
                         class="member-link"
-                        data-i18n="aoLink"
                     >
                         あおのホームページ ↗
                     </a>
 
                 </div>
 
+
                 <img
                     src="ao.png"
                     alt="あお"
                     class="member-image"
-                    data-i18n-alt="aoAlt"
                 >
 
             </article>
@@ -2320,39 +2472,32 @@ footer {
 
                 <div class="member-content">
 
-                    <span
-                        class="member-role"
-                        data-i18n="developer"
-                    >
+                    <span class="member-role">
                         DEVELOPER
                     </span>
 
-                    <h3 class="member-name">
+                    <h3 class="member-name" data-i18n="binaryName">
                         バイナリ
                     </h3>
 
-                    <p
-                        class="member-text"
-                        data-i18n="memberText"
-                    >
+                    <p class="member-text">
                         Web開発 / Programming
                     </p>
 
                     <a
                         href="https://bainarinoakaunto.github.io/bainariweb/"
                         class="member-link"
-                        data-i18n="binaryLink"
                     >
                         バイナリのホームページ ↗
                     </a>
 
                 </div>
 
+
                 <img
                     src="by.png"
                     alt="バイナリ"
                     class="member-image"
-                    data-i18n-alt="binaryAlt"
                 >
 
             </article>
@@ -2374,24 +2519,15 @@ footer {
 
         <div class="reveal">
 
-            <div
-                class="section-label"
-                data-i18n="technologyLabel"
-            >
+            <div class="section-label">
                 04 / TECHNOLOGY
             </div>
 
-            <h2
-                class="section-title"
-                data-i18n="technologyTitle"
-            >
+            <h2 class="section-title">
                 Technology
             </h2>
 
-            <p
-                class="section-description"
-                data-i18n="technologyDescription"
-            >
+            <p class="section-description">
                 LABOで使用している技術です。
             </p>
 
@@ -2432,24 +2568,15 @@ footer {
 
         <div class="reveal">
 
-            <div
-                class="section-label"
-                data-i18n="linksLabel"
-            >
+            <div class="section-label">
                 05 / LINKS
             </div>
 
-            <h2
-                class="section-title"
-                data-i18n="linksTitle"
-            >
+            <h2 class="section-title">
                 Links
             </h2>
 
-            <p
-                class="section-description"
-                data-i18n="linksDescription"
-            >
+            <p class="section-description">
                 バイナリテックLABOとメンバーの
                 各ページ・アカウントです。
             </p>
@@ -2470,20 +2597,17 @@ footer {
 
                 <div>
 
-                    <h3 data-i18n="laboHome">
+                    <h3>
                         LABOホームページ
                     </h3>
 
-                    <p data-i18n="laboHomeText">
+                    <p>
                         バイナリテックLABO公式ホームページ
                     </p>
 
                 </div>
 
-                <span
-                    class="link-arrow"
-                    data-i18n="openSite"
-                >
+                <span class="link-arrow">
                     サイトを開く ↗
                 </span>
 
@@ -2507,16 +2631,13 @@ footer {
                         GitHub
                     </h3>
 
-                    <p data-i18n="githubText">
+                    <p>
                         ソースコード・プロジェクト
                     </p>
 
                 </div>
 
-                <span
-                    class="link-arrow"
-                    data-i18n="openGithub"
-                >
+                <span class="link-arrow">
                     GitHubを開く ↗
                 </span>
 
@@ -2534,20 +2655,17 @@ footer {
 
                 <div>
 
-                    <h3 data-i18n="aoHome">
+                    <h3>
                         あおのホームページ
                     </h3>
 
-                    <p data-i18n="aoHomeText">
+                    <p>
                         メンバー「あお」のページ
                     </p>
 
                 </div>
 
-                <span
-                    class="link-arrow"
-                    data-i18n="viewPage"
-                >
+                <span class="link-arrow">
                     ページを見る ↗
                 </span>
 
@@ -2565,20 +2683,17 @@ footer {
 
                 <div>
 
-                    <h3 data-i18n="binaryHome">
+                    <h3>
                         バイナリのページ
                     </h3>
 
-                    <p data-i18n="binaryHomeText">
+                    <p>
                         メンバー「バイナリ」のページ
                     </p>
 
                 </div>
 
-                <span
-                    class="link-arrow"
-                    data-i18n="viewPage"
-                >
+                <span class="link-arrow">
                     ページを見る ↗
                 </span>
 
@@ -2599,10 +2714,7 @@ footer {
 
     <div class="container">
 
-        <div
-            class="footer-big reveal"
-            data-i18n-html="footerBig"
-        >
+        <div class="footer-big reveal">
             Let's create<br>
             something.
         </div>
@@ -2613,7 +2725,7 @@ footer {
                 © 2026 Binary Tech LABO
             </span>
 
-            <span data-i18n="footer">
+            <span>
                 Technology, made interesting.
             </span>
 
@@ -2638,9 +2750,13 @@ const header =
 function updateHeader() {
 
     if (window.scrollY > 60) {
+
         header.classList.add("scrolled");
+
     } else {
+
         header.classList.remove("scrolled");
+
     }
 
 }
@@ -2717,6 +2833,10 @@ menuButton.addEventListener(
 );
 
 
+/* =========================================
+   MENU LINK
+========================================= */
+
 document
     .querySelectorAll(".menu-list a")
     .forEach(link => {
@@ -2733,12 +2853,18 @@ document
     });
 
 
+/* =========================================
+   ESC
+========================================= */
+
 document.addEventListener(
     "keydown",
     event => {
 
         if (event.key === "Escape") {
+
             closeMenu();
+
         }
 
     }
@@ -2837,77 +2963,27 @@ const translations = {
 
     ja: {
 
-        language:
-            "言語",
+        pageTitle:
+            "バイナリテックLABO",
 
-        menu:
-            "メニュー",
+        philosophyLabel:
+            "BAINARI TECH LABO / PHILOSOPHY",
 
-        menuSmall:
-            "BINARY TECH LABO",
+        philosophyTitle:
+            "技術とアイデアで、<br><span>可能性をひろげる。</span>",
 
-        home:
-            "HOME",
+        philosophyP1:
+            "BAINARI TECH LABOは、テクノロジーと自由な発想を掛け合わせ、新しいアイデアを <strong class=\"initial initial-b\">B</strong>UILD し、挑戦を <strong class=\"initial initial-a1\">A</strong>DVANCE させながら、新しい価値を <strong class=\"initial initial-i1\">I</strong>NNOVATE する。",
 
-        message:
-            "MESSAGE",
+        philosophyP2:
+            "人それぞれが持つ才能や可能性を <strong class=\"initial initial-n\">N</strong>URTURE し、生まれた想いや価値を <strong class=\"initial initial-a2\">A</strong>MPLIFY して、必要とする人へ <strong class=\"initial initial-r\">R</strong>EACH させる。そして、まだ見たことのない体験や新しい可能性を <strong class=\"initial initial-i2\">I</strong>NSPIRE し、さまざまな分野で人を笑顔にする。",
 
-        news:
-            "NEWS",
+        philosophyFinal:
+            "技術をつくるだけではなく、<br>技術から生まれる可能性を追い求める。<br><br>それが、BAINARI TECH LABOが大切にしている想いです。",
 
-        about:
-            "ABOUT",
 
-        projects:
-            "PROJECTS",
-
-        members:
-            "MEMBERS",
-
-        technology:
-            "TECHNOLOGY",
-
-        links:
-            "LINKS",
-
-        heroLabel:
-            "BINARY TECH LABO / GROUP",
-
-        heroTitle:
-            "Technology,<br>made interesting.",
-
-        heroDescription:
-            "Webサイトやツール、プログラムなどを制作しています。<br>「面白そう」をきっかけに、自由なアイデアを技術で形にします。",
-
-        scroll:
-            "SCROLL",
-
-        circleLabel:
-            "BINARY TECH LABO",
-
-        circleStrong:
-            "CREATE.",
-
-        messageLabel:
-            "BINARY TECH LABO / MESSAGE",
-
-        messageTitle:
-            "世界を、もっと便利に。<br><span>そして、もっと面白く。</span>",
-
-        messageP1:
-            "幅広い業界で、まだ見たことのないアイデアをカタチにし、<br>様々な可能性を切り拓いていく。",
-
-        messageP2:
-            "必要なのは、自由な発想と、<br><strong>「やってみたい」をカタチにする情熱。</strong>",
-
-        messageP3:
-            "テクノロジーの力を使い、<br><strong>様々な分野で、人を笑顔にする。</strong><br>日常に新しい価値とワクワクを届ける。",
-
-        messageFinal:
-            "世界を、より便利に。<br>より楽しくするために。<br><br>様々な可能性を追い求め、<br>様々な分野で人を笑顔にする。<br><br>我々は、これからも挑戦を続けます。",
-
-        newsLabel:
-            "NEWS",
+        logo:
+            "バイナリテックLABO",
 
         newsTitle:
             "お知らせ",
@@ -2915,23 +2991,38 @@ const translations = {
         newsDescription:
             "バイナリテックLABOからのお知らせです。",
 
-        loading:
-            "LOADING...",
+        newsBadge:
+            "NEW",
 
-        loadingBadge:
-            "...",
+        newsText:
+            "多言語に対応しました",
 
-        newsLoading:
-            "お知らせを読み込んでいます...",
+        heroTitle:
+            "Technology,<br>made interesting.",
 
-        newsError:
-            "お知らせを読み込めませんでした。",
+        heroDescription:
+            "Webサイトやツール、プログラムなどを制作しています。<br>「面白そう」をきっかけに、自由なアイデアを技術で形にします。",
 
-        newsEmpty:
-            "現在、お知らせはありません。",
+        messageTitle:
+            "世界を、もっと便利に。<br><span>そして、もっと面白く。</span>",
 
-        aboutLabel:
-            "01 / ABOUT",
+        messageBody1:
+            "幅広い分野で、まだ見たことのないアイデアをカタチにし、<br>新しい可能性を切り拓いていく。",
+
+        messageBody2:
+            "必要なのは、自由な発想と、<br><strong>「やってみたい」をカタチにする情熱。</strong>",
+
+        messageBody3:
+            "テクノロジーの力を使い、<br>日常に新しい価値とワクワクを届ける。",
+
+        messageFinal:
+            "世界を、より便利に。<br>より楽しくするために。<br><br>私たちは、これからも挑戦を続けます。",
+
+        philosophyBody1:
+            "BAINARI TECH LABOは、テクノロジーと自由な発想を掛け合わせ、新しいアイデアを <strong class='initial initial-b'>B</strong>UILD し、挑戦を <strong class='initial initial-a1'>A</strong>DVANCE させながら、新しい価値を <strong class='initial initial-i1'>I</strong>NNOVATE する。",
+
+        philosophyBody2:
+            "人それぞれが持つ才能や可能性を <strong class='initial initial-n'>N</strong>URTURE し、生まれた想いや価値を <strong class='initial initial-a2'>A</strong>MPLIFY して、必要とする人へ <strong class='initial initial-r'>R</strong>EACH させる。そして、まだ見たことのない体験や新しい可能性を <strong class='initial initial-i2'>I</strong>NSPIRE し、さまざまな分野で人を笑顔にする。",
 
         aboutTitle:
             "About LABO",
@@ -2957,9 +3048,6 @@ const translations = {
         freeText:
             "「面白そう」をきっかけに、自由なアイデアを形にします。",
 
-        projectsLabel:
-            "02 / PROJECTS",
-
         projectsTitle:
             "Projects",
 
@@ -2984,17 +3072,11 @@ const translations = {
         dataLabText:
             "データ処理や計算などを実験するプロジェクト。",
 
-        membersLabel:
-            "03 / MEMBERS",
-
         membersTitle:
             "Members",
 
         membersDescription:
             "バイナリテックLABOで活動している2人のメンバーです。",
-
-        developer:
-            "DEVELOPER",
 
         memberText:
             "Web開発 / Programming",
@@ -3005,23 +3087,11 @@ const translations = {
         binaryLink:
             "バイナリのホームページ ↗",
 
-        aoAlt:
-            "あお",
-
-        binaryAlt:
-            "バイナリ",
-
-        technologyLabel:
-            "04 / TECHNOLOGY",
-
         technologyTitle:
             "Technology",
 
         technologyDescription:
             "LABOで使用している技術です。",
-
-        linksLabel:
-            "05 / LINKS",
 
         linksTitle:
             "Links",
@@ -3059,88 +3129,34 @@ const translations = {
         viewPage:
             "ページを見る ↗",
 
-        footerBig:
-            "Let's create<br>something.",
-
         footer:
             "Technology, made interesting."
-
     },
 
 
     en: {
 
-        language:
-            "Language",
-
-        menu:
-            "Menu",
-
-        menuSmall:
+        pageTitle:
             "BINARY TECH LABO",
 
-        home:
-            "HOME",
+        philosophyLabel:
+            "BAINARI TECH LABO / PHILOSOPHY",
 
-        message:
-            "MESSAGE",
+        philosophyTitle:
+            "Expand possibilities<br><span>through technology and ideas.</span>",
 
-        news:
-            "NEWS",
+        philosophyP1:
+            "BAINARI TECH LABO combines technology with free thinking to <strong class=\"initial initial-b\">B</strong>UILD new ideas, <strong class=\"initial initial-a1\">A</strong>DVANCE challenges, and <strong class=\"initial initial-i1\">I</strong>NNOVATE new value.",
 
-        about:
-            "ABOUT",
+        philosophyP2:
+            "We <strong class=\"initial initial-n\">N</strong>URTURE each person's talents and possibilities, <strong class=\"initial initial-a2\">A</strong>MPLIFY the ideas and value we create, and <strong class=\"initial initial-r\">R</strong>EACH the people who need them. We then <strong class=\"initial initial-i2\">I</strong>NSPIRE new experiences and possibilities, bringing smiles to people across many fields.",
 
-        projects:
-            "PROJECTS",
+        philosophyFinal:
+            "We do not simply create technology.<br>We pursue the possibilities born from technology.<br><br>That is what BAINARI TECH LABO values.",
 
-        members:
-            "MEMBERS",
 
-        technology:
-            "TECHNOLOGY",
-
-        links:
-            "LINKS",
-
-        heroLabel:
-            "BINARY TECH LABO / GROUP",
-
-        heroTitle:
-            "Technology,<br>made interesting.",
-
-        heroDescription:
-            "We create websites, tools, programs, and more.<br>Inspired by curiosity, we turn free ideas into technology.",
-
-        scroll:
-            "SCROLL",
-
-        circleLabel:
+        logo:
             "BINARY TECH LABO",
-
-        circleStrong:
-            "CREATE.",
-
-        messageLabel:
-            "BINARY TECH LABO / MESSAGE",
-
-        messageTitle:
-            "Make the world more convenient.<br><span>And make it more interesting.</span>",
-
-        messageP1:
-            "Across a wide range of fields, we turn ideas you have never seen before into reality,<br>opening up a variety of possibilities.",
-
-        messageP2:
-            "What we need is free thinking and<br><strong>the passion to turn “I want to try it” into reality.</strong>",
-
-        messageP3:
-            "Using the power of technology,<br><strong>we bring smiles to people across a wide range of fields.</strong><br>We bring new value and excitement to everyday life.",
-
-        messageFinal:
-            "To make the world more convenient.<br>And more fun.<br><br>We pursue a variety of possibilities,<br>bringing smiles to people across a wide range of fields.<br><br>We will continue to take on new challenges.",
-
-        newsLabel:
-            "NEWS",
 
         newsTitle:
             "News",
@@ -3148,23 +3164,38 @@ const translations = {
         newsDescription:
             "News and updates from Binary Tech LABO.",
 
-        loading:
-            "LOADING...",
+        newsBadge:
+            "NEW",
 
-        loadingBadge:
-            "...",
+        newsText:
+            "Multilingual support is now available",
 
-        newsLoading:
-            "Loading news...",
+        heroTitle:
+            "Technology,<br>made interesting.",
 
-        newsError:
-            "Unable to load news.",
+        heroDescription:
+            "We create websites, tools, programs, and more.<br>Inspired by curiosity, we turn free ideas into technology.",
 
-        newsEmpty:
-            "There is currently no news.",
+        messageTitle:
+            "Making the world more useful.<br><span>And much more interesting.</span>",
 
-        aboutLabel:
-            "01 / ABOUT",
+        messageBody1:
+            "Across a wide range of fields, we turn ideas you have never seen before into reality,<br>opening the door to new possibilities.",
+
+        messageBody2:
+            "What we need is free thinking,<br>and the passion to turn <strong>“I want to try it” into reality.</strong>",
+
+        messageBody3:
+            "Using the power of technology,<br>we bring new value and excitement to everyday life.",
+
+        messageFinal:
+            "Making the world more convenient.<br>Making it more enjoyable.<br><br>We will continue to take on new challenges.",
+
+        philosophyBody1:
+            "BAINARI TECH LABO combines technology with free thinking to <strong class='initial initial-b'>B</strong>UILD new ideas, <strong class='initial initial-a1'>A</strong>DVANCE challenges, and <strong class='initial initial-i1'>I</strong>NNOVATE new value.",
+
+        philosophyBody2:
+            "We <strong class='initial initial-n'>N</strong>URTURE the talents and possibilities within every person, <strong class='initial initial-a2'>A</strong>MPLIFY the ideas and value we create, and <strong class='initial initial-r'>R</strong>EACH the people who need them. We <strong class='initial initial-i2'>I</strong>NSPIRE new experiences and possibilities, bringing smiles to people across many fields.",
 
         aboutTitle:
             "About LABO",
@@ -3190,9 +3221,6 @@ const translations = {
         freeText:
             "Inspired by curiosity, we turn free ideas into reality.",
 
-        projectsLabel:
-            "02 / PROJECTS",
-
         projectsTitle:
             "Projects",
 
@@ -3217,17 +3245,11 @@ const translations = {
         dataLabText:
             "A project for experimenting with data processing and calculations.",
 
-        membersLabel:
-            "03 / MEMBERS",
-
         membersTitle:
             "Members",
 
         membersDescription:
             "The two members working at Binary Tech LABO.",
-
-        developer:
-            "DEVELOPER",
 
         memberText:
             "Web Development / Programming",
@@ -3238,23 +3260,11 @@ const translations = {
         binaryLink:
             "Binary's Homepage ↗",
 
-        aoAlt:
-            "AO",
-
-        binaryAlt:
-            "Binary",
-
-        technologyLabel:
-            "04 / TECHNOLOGY",
-
         technologyTitle:
             "Technology",
 
         technologyDescription:
             "Technologies used at LABO.",
-
-        linksLabel:
-            "05 / LINKS",
 
         linksTitle:
             "Links",
@@ -3292,88 +3302,34 @@ const translations = {
         viewPage:
             "View Page ↗",
 
-        footerBig:
-            "Let's create<br>something.",
-
         footer:
             "Technology, made interesting."
-
     },
 
 
     "zh-CN": {
 
-        language:
-            "语言",
-
-        menu:
-            "菜单",
-
-        menuSmall:
+        pageTitle:
             "BINARY TECH LABO",
 
-        home:
-            "首页",
+        philosophyLabel:
+            "BAINARI TECH LABO / 理念",
 
-        message:
-            "寄语",
+        philosophyTitle:
+            "用技术与创意，<br><span>拓展更多可能性。</span>",
 
-        news:
-            "通知",
+        philosophyP1:
+            "BAINARI TECH LABO 将科技与自由的想象力结合起来，<strong class=\"initial initial-b\">B</strong>UILD 新的创意，<strong class=\"initial initial-a1\">A</strong>DVANCE 挑战，并不断 <strong class=\"initial initial-i1\">I</strong>NNOVATE 新的价值。",
 
-        about:
-            "关于",
+        philosophyP2:
+            "我们 <strong class=\"initial initial-n\">N</strong>URTURE 每个人的才能与可能性，将产生的想法与价值 <strong class=\"initial initial-a2\">A</strong>MPLIFY，并将它们 <strong class=\"initial initial-r\">R</strong>EACH 给需要的人。然后 <strong class=\"initial initial-i2\">I</strong>NSPIRE 前所未见的体验与新的可能性，在各个领域为人们带来笑容。",
 
-        projects:
-            "项目",
+        philosophyFinal:
+            "我们不只是创造技术。<br>我们追寻技术所孕育出的可能性。<br><br>这就是 BAINARI TECH LABO 所珍视的理念。",
 
-        members:
-            "成员",
 
-        technology:
-            "技术",
-
-        links:
-            "链接",
-
-        heroLabel:
-            "BINARY TECH LABO / 团队",
-
-        heroTitle:
-            "让科技，<br>变得更有趣。",
-
-        heroDescription:
-            "我们制作网站、工具、程序等各种作品。<br>从“感觉很有趣”出发，用技术将自由的创意变成现实。",
-
-        scroll:
-            "向下滚动",
-
-        circleLabel:
+        logo:
             "BINARY TECH LABO",
-
-        circleStrong:
-            "创造。",
-
-        messageLabel:
-            "BINARY TECH LABO / 寄语",
-
-        messageTitle:
-            "让世界更加便利。<br><span>也让世界更加有趣。</span>",
-
-        messageP1:
-            "在各种领域中，将前所未见的创意变成现实，<br>不断开拓各种新的可能性。",
-
-        messageP2:
-            "我们需要的是自由的想象力，<br><strong>以及将“我想试试看”变成现实的热情。</strong>",
-
-        messageP3:
-            "运用科技的力量，<br><strong>在各个领域为人们带来笑容。</strong><br>为日常生活带来新的价值与惊喜。",
-
-        messageFinal:
-            "让世界更加便利。<br>也让世界更加有趣。<br><br>不断追寻各种可能性，<br>在各个领域为人们带来笑容。<br><br>我们将继续迎接新的挑战。",
-
-        newsLabel:
-            "通知",
 
         newsTitle:
             "通知",
@@ -3381,26 +3337,41 @@ const translations = {
         newsDescription:
             "Binary Tech LABO 的最新通知。",
 
-        loading:
-            "加载中...",
+        newsBadge:
+            "NEW",
 
-        loadingBadge:
-            "...",
+        newsText:
+            "现已支持多语言",
 
-        newsLoading:
-            "正在加载通知...",
+        heroTitle:
+            "让科技，<br>变得更有趣。",
 
-        newsError:
-            "无法加载通知。",
+        heroDescription:
+            "我们制作网站、工具、程序等各种作品。<br>从“感觉很有趣”出发，用技术将自由的创意变成现实。",
 
-        newsEmpty:
-            "目前没有通知。",
+        messageTitle:
+            "让世界更加便利。<br><span>也让世界更加有趣。</span>",
 
-        aboutLabel:
-            "01 / 关于",
+        messageBody1:
+            "在广泛的领域中，将前所未见的创意变成现实，<br>不断开拓新的可能性。",
+
+        messageBody2:
+            "我们需要的是自由的思维，<br>以及将<strong>“想试试看”变成现实的热情。</strong>",
+
+        messageBody3:
+            "运用科技的力量，<br>为日常生活带来新的价值与惊喜。",
+
+        messageFinal:
+            "让世界更加便利。<br>让世界更加精彩。<br><br>我们将继续不断挑战新的可能。",
+
+        philosophyBody1:
+            "BAINARI TECH LABO 将科技与自由的想法结合，<strong class='initial initial-b'>B</strong>UILD 新的创意，<strong class='initial initial-a1'>A</strong>DVANCE 每一次挑战，并不断 <strong class='initial initial-i1'>I</strong>NNOVATE 新的价值。",
+
+        philosophyBody2:
+            "我们 <strong class='initial initial-n'>N</strong>URTURE 每个人的才能与可能性，将诞生的想法与价值 <strong class='initial initial-a2'>A</strong>MPLIFY，并 <strong class='initial initial-r'>R</strong>EACH 真正需要它们的人。同时，通过 <strong class='initial initial-i2'>I</strong>NSPIRE 全新的体验与可能性，在不同领域为人们带来笑容。",
 
         aboutTitle:
-            "关于 LABO",
+            "About LABO",
 
         aboutDescription:
             "Binary Tech LABO 制作网站、Web应用、程序等各种作品。",
@@ -3423,11 +3394,8 @@ const translations = {
         freeText:
             "从“感觉很有趣”出发，将自由的创意变成现实。",
 
-        projectsLabel:
-            "02 / 项目",
-
         projectsTitle:
-            "项目",
+            "Projects",
 
         projectsDescription:
             "Binary Tech LABO 正在制作的项目。",
@@ -3439,7 +3407,7 @@ const translations = {
             "用于搜索和计算质数的Web工具。",
 
         webTools:
-            "Web 工具",
+            "Web Tools",
 
         webToolsText:
             "制作可以直接在浏览器中使用的实用Web工具。",
@@ -3450,17 +3418,11 @@ const translations = {
         dataLabText:
             "用于实验数据处理和计算的项目。",
 
-        membersLabel:
-            "03 / 成员",
-
         membersTitle:
-            "成员",
+            "Members",
 
         membersDescription:
             "在 Binary Tech LABO 活动的两位成员。",
-
-        developer:
-            "开发者",
 
         memberText:
             "Web开发 / Programming",
@@ -3471,26 +3433,14 @@ const translations = {
         binaryLink:
             "Binary的主页 ↗",
 
-        aoAlt:
-            "AO",
-
-        binaryAlt:
-            "Binary",
-
-        technologyLabel:
-            "04 / 技术",
-
         technologyTitle:
-            "技术",
+            "Technology",
 
         technologyDescription:
             "LABO 使用的技术。",
 
-        linksLabel:
-            "05 / 链接",
-
         linksTitle:
-            "链接",
+            "Links",
 
         linksDescription:
             "Binary Tech LABO及成员的相关页面和账号。",
@@ -3525,12 +3475,8 @@ const translations = {
         viewPage:
             "查看页面 ↗",
 
-        footerBig:
-            "让我们创造<br>一些东西。",
-
         footer:
             "让科技，变得更有趣。"
-
     }
 
 };
@@ -3543,7 +3489,7 @@ let currentLanguage = "ja";
    LANGUAGE FROM URL
 ========================================= */
 
-function getLanguageFromURL() {
+function getLanguageFromURL(){
 
     const params =
         new URLSearchParams(
@@ -3553,7 +3499,7 @@ function getLanguageFromURL() {
     const language =
         params.get("lang");
 
-    if (translations[language]) {
+    if(translations[language]){
         return language;
     }
 
@@ -3565,7 +3511,7 @@ function getLanguageFromURL() {
    UPDATE URL
 ========================================= */
 
-function updateLanguageURL(language) {
+function updateLanguageURL(language){
 
     const url =
         new URL(window.location.href);
@@ -3586,6 +3532,18 @@ function updateLanguageURL(language) {
 }
 
 
+function colorPhilosophyInitials(html) {
+    const map = {
+        BUILD: "initial-b", ADVANCE: "initial-a1", INNOVATE: "initial-i1",
+        NURTURE: "initial-n", AMPLIFY: "initial-a2", REACH: "initial-r", INSPIRE: "initial-i2"
+    };
+    Object.entries(map).forEach(([word, cls]) => {
+        const re = new RegExp("<strong>\\s*" + word + "\\s*</strong>", "g");
+        html = html.replace(re, '<strong class=\"initial ' + cls + '">' + word[0] + '</strong>' + word.slice(1));
+    });
+    return html;
+}
+
 /* =========================================
    APPLY LANGUAGE
 ========================================= */
@@ -3593,9 +3551,9 @@ function updateLanguageURL(language) {
 function applyLanguage(
     language,
     updateURL = true
-) {
+){
 
-    if (!translations[language]) {
+    if(!translations[language]){
         language = "ja";
     }
 
@@ -3606,134 +3564,344 @@ function applyLanguage(
 
 
     document.documentElement.lang =
-        language;
+        language === "zh-CN"
+        ? "zh-CN"
+        : language;
 
 
-    document.title =
-        language === "ja"
-            ? "バイナリテックLABO"
-            : "BINARY TECH LABO";
+    /* LOGO */
+
+    document.querySelector(".logo-text")
+        .textContent = t.logo;
 
 
-    /* TEXT */
+    /* NEWS */
 
-    document
-        .querySelectorAll("[data-i18n]")
-        .forEach(element => {
+    document.querySelector(
+        "#news .section-title"
+    ).textContent =
+        t.newsTitle;
 
-            const key =
-                element.dataset.i18n;
+    document.querySelector(
+        "#news .section-description"
+    ).textContent =
+        t.newsDescription;
 
-            if (
-                Object.prototype.hasOwnProperty.call(
-                    t,
-                    key
-                )
-            ) {
+    document.querySelector(
+        ".news-badge"
+    ).textContent =
+        t.newsBadge;
 
-                element.textContent =
-                    t[key];
-
-            }
-
-        });
-
-
-    /* HTML */
-
-    document
-        .querySelectorAll("[data-i18n-html]")
-        .forEach(element => {
-
-            const key =
-                element.dataset.i18nHtml;
-
-            if (
-                Object.prototype.hasOwnProperty.call(
-                    t,
-                    key
-                )
-            ) {
-
-                element.innerHTML =
-                    t[key];
-
-            }
-
-        });
+    document.querySelector(
+        ".news-content h3"
+    ).textContent =
+        t.newsText;
 
 
-    /* ALT */
+    /* HERO */
 
-    document
-        .querySelectorAll("[data-i18n-alt]")
-        .forEach(element => {
+    document.querySelector(
+        ".hero h1"
+    ).innerHTML =
+        t.heroTitle;
 
-            const key =
-                element.dataset.i18nAlt;
-
-            if (
-                Object.prototype.hasOwnProperty.call(
-                    t,
-                    key
-                )
-            ) {
-
-                element.alt =
-                    t[key];
-
-            }
-
-        });
+    document.querySelector(
+        ".hero-description"
+    ).innerHTML =
+        t.heroDescription;
 
 
-    /* ARIA */
+    /* MESSAGE */
 
-    document
-        .querySelectorAll("[data-i18n-aria]")
-        .forEach(element => {
+    document.querySelector(
+        ".brand-message-title"
+    ).innerHTML =
+        t.messageTitle;
 
-            const key =
-                element.dataset.i18nAria;
+    const messageBody =
+        document.querySelectorAll(
+            ".brand-message-body p"
+        );
 
-            if (
-                Object.prototype.hasOwnProperty.call(
-                    t,
-                    key
-                )
-            ) {
+    messageBody[0].innerHTML =
+        t.messageBody1;
 
-                element.setAttribute(
-                    "aria-label",
-                    t[key]
-                );
+    messageBody[1].innerHTML =
+        t.messageBody2;
 
-            }
+    messageBody[2].innerHTML =
+        t.messageBody3;
 
-        });
+    document.querySelector(
+        ".brand-message-final"
+    ).innerHTML =
+        t.messageFinal;
 
 
-    menuButton.setAttribute(
-        "aria-label",
-        t.menu
-    );
+    /* GROUP PHILOSOPHY */
+
+    document.querySelector(
+        ".group-philosophy-title"
+    ).innerHTML =
+        t.philosophyTitle;
+
+    const philosophyParagraphs =
+        document.querySelectorAll(
+            ".group-philosophy-body p"
+        );
+
+    philosophyParagraphs[0].innerHTML =
+        colorPhilosophyInitials(t.philosophyBody1);
+
+    philosophyParagraphs[1].innerHTML =
+        colorPhilosophyInitials(t.philosophyBody2);
+
+    document.querySelector(
+        ".group-philosophy-bottom"
+    ).innerHTML =
+        t.philosophyFinal;
+
+
+    /* ABOUT */
+
+    document.querySelector(
+        "#about .section-title"
+    ).textContent =
+        t.aboutTitle;
+
+    document.querySelector(
+        "#about .section-description"
+    ).textContent =
+        t.aboutDescription;
+
+    const aboutCards =
+        document.querySelectorAll(
+            ".about-card"
+        );
+
+    aboutCards[0]
+        .querySelector("h3")
+        .textContent =
+            t.develop;
+
+    aboutCards[0]
+        .querySelector("p")
+        .textContent =
+            t.developText;
+
+    aboutCards[1]
+        .querySelector("h3")
+        .textContent =
+            t.challenge;
+
+    aboutCards[1]
+        .querySelector("p")
+        .textContent =
+            t.challengeText;
+
+    aboutCards[2]
+        .querySelector("h3")
+        .textContent =
+            t.free;
+
+    aboutCards[2]
+        .querySelector("p")
+        .textContent =
+            t.freeText;
+
+
+    /* PROJECTS */
+
+    document.querySelector(
+        "#projects .section-title"
+    ).textContent =
+        t.projectsTitle;
+
+    document.querySelector(
+        "#projects .section-description"
+    ).textContent =
+        t.projectsDescription;
+
+    const projects =
+        document.querySelectorAll(
+            ".project"
+        );
+
+    projects[0]
+        .querySelector("h3")
+        .textContent =
+            t.prime;
+
+    projects[0]
+        .querySelector("p")
+        .textContent =
+            t.primeText;
+
+    projects[1]
+        .querySelector("h3")
+        .textContent =
+            t.webTools;
+
+    projects[1]
+        .querySelector("p")
+        .textContent =
+            t.webToolsText;
+
+    projects[2]
+        .querySelector("h3")
+        .textContent =
+            t.dataLab;
+
+    projects[2]
+        .querySelector("p")
+        .textContent =
+            t.dataLabText;
+
+
+    /* MEMBERS */
+
+    document.querySelector(
+        "#members .section-title"
+    ).textContent =
+        t.membersTitle;
+
+    document.querySelector(
+        "#members .section-description"
+    ).textContent =
+        t.membersDescription;
+
+    document.querySelectorAll(
+        ".member-text"
+    ).forEach(element => {
+
+        element.textContent =
+            t.memberText;
+
+    });
+
+    const memberLinks =
+        document.querySelectorAll(
+            ".member-link"
+        );
+
+    memberLinks[0].textContent =
+        t.aoLink;
+
+    memberLinks[1].textContent =
+        t.binaryLink;
+
+
+    /* TECHNOLOGY */
+
+    document.querySelector(
+        "#skills .section-title"
+    ).textContent =
+        t.technologyTitle;
+
+    document.querySelector(
+        "#skills .section-description"
+    ).textContent =
+        t.technologyDescription;
+
+
+    /* LINKS */
+
+    document.querySelector(
+        "#links .section-title"
+    ).textContent =
+        t.linksTitle;
+
+    document.querySelector(
+        "#links .section-description"
+    ).textContent =
+        t.linksDescription;
+
+    const cards =
+        document.querySelectorAll(
+            ".link-card"
+        );
+
+    cards[0]
+        .querySelector("h3")
+        .textContent =
+            t.laboHome;
+
+    cards[0]
+        .querySelector("p")
+        .textContent =
+            t.laboHomeText;
+
+    cards[0]
+        .querySelector(".link-arrow")
+        .textContent =
+            t.openSite;
+
+    cards[1]
+        .querySelector("p")
+        .textContent =
+            t.githubText;
+
+    cards[1]
+        .querySelector(".link-arrow")
+        .textContent =
+            t.openGithub;
+
+    cards[2]
+        .querySelector("h3")
+        .textContent =
+            t.aoHome;
+
+    cards[2]
+        .querySelector("p")
+        .textContent =
+            t.aoHomeText;
+
+    cards[2]
+        .querySelector(".link-arrow")
+        .textContent =
+            t.viewPage;
+
+    cards[3]
+        .querySelector("h3")
+        .textContent =
+            t.binaryHome;
+
+    cards[3]
+        .querySelector("p")
+        .textContent =
+            t.binaryHomeText;
+
+    cards[3]
+        .querySelector(".link-arrow")
+        .textContent =
+            t.viewPage;
+
+
+    /* FOOTER */
+
+    document.querySelector(
+        ".footer-bottom span:last-child"
+    ).textContent =
+        t.footer;
 
 
     /* LANGUAGE BUTTON */
 
-    document
-        .querySelectorAll("[data-language]")
-        .forEach(button => {
+    document.querySelectorAll(
+        "[data-language]"
+    ).forEach(button => {
 
-            button.classList.toggle(
-                "active",
-                button.dataset.language === language
-            );
+        button.classList.toggle(
+            "active",
+            button.dataset.language === language
+        );
 
-        });
+    });
 
 
-    if (updateURL) {
+    /* URL */
+
+    if(updateURL){
 
         updateLanguageURL(
             language
@@ -3741,293 +3909,139 @@ function applyLanguage(
 
     }
 
-
-    renderNewsLoading();
-    loadNews();
+    applyFullPageTranslations(language);
 
 }
 
-
 /* =========================================
-   NEWS LOADING
+   FULL PAGE TRANSLATION
 ========================================= */
 
-function renderNewsLoading() {
-
-    const newsList =
-        document.getElementById(
-            "newsList"
-        );
-
-    const t =
-        translations[currentLanguage];
-
-    newsList.innerHTML = `
-        <div class="news-item">
-
-            <div class="news-date">
-                ${t.loading}
-            </div>
-
-            <div class="news-content">
-
-                <span class="news-badge">
-                    ${t.loadingBadge}
-                </span>
-
-                <h3>
-                    ${t.newsLoading}
-                </h3>
-
-            </div>
-
-        </div>
-    `;
-
-}
-
-
-/* =========================================
-   NEWS JSON
-========================================= */
-
-async function loadNews() {
-
-    const newsList =
-        document.getElementById(
-            "newsList"
-        );
-
-    try {
-
-        const response =
-            await fetch(
-                "news.json?cache=" +
-                Date.now()
-            );
-
-        if (!response.ok) {
-
-            throw new Error(
-                "news.json の取得に失敗しました"
-            );
-
-        }
-
-        const news =
-            await response.json();
-
-
-        if (
-            !Array.isArray(news) ||
-            news.length === 0
-        ) {
-
-            const t =
-                translations[currentLanguage];
-
-            newsList.innerHTML = `
-                <div class="news-item">
-
-                    <div class="news-date">
-                        -
-                    </div>
-
-                    <div class="news-content">
-
-                        <span class="news-badge">
-                            INFO
-                        </span>
-
-                        <h3>
-                            ${t.newsEmpty}
-                        </h3>
-
-                    </div>
-
-                </div>
-            `;
-
-            return;
-
-        }
-
-
-        news.sort(
-            (a, b) =>
-                new Date(b.date) -
-                new Date(a.date)
-        );
-
-
-        newsList.innerHTML = "";
-
-
-        news.forEach(
-            item => {
-
-                const article =
-                    document.createElement(
-                        "article"
-                    );
-
-                article.className =
-                    "news-item reveal";
-
-
-                const date =
-                    document.createElement(
-                        "div"
-                    );
-
-                date.className =
-                    "news-date";
-
-                date.textContent =
-                    item.date || "";
-
-
-                const content =
-                    document.createElement(
-                        "div"
-                    );
-
-                content.className =
-                    "news-content";
-
-
-                const badge =
-                    document.createElement(
-                        "span"
-                    );
-
-                badge.className =
-                    "news-badge";
-
-
-                if (
-                    item.type &&
-                    typeof item.type === "object"
-                ) {
-
-                    badge.textContent =
-                        item.type[currentLanguage] ||
-                        item.type.ja ||
-                        item.type.en ||
-                        "INFO";
-
-                } else {
-
-                    badge.textContent =
-                        item.type ||
-                        "INFO";
-
-                }
-
-
-                const title =
-                    document.createElement(
-                        "h3"
-                    );
-
-                const languageData =
-                    item.title || {};
-
-
-                title.textContent =
-                    languageData[currentLanguage] ||
-                    languageData.ja ||
-                    languageData.en ||
-                    Object.values(languageData)[0] ||
-                    "";
-
-
-                content.appendChild(
-                    badge
-                );
-
-                content.appendChild(
-                    title
-                );
-
-                article.appendChild(
-                    date
-                );
-
-                article.appendChild(
-                    content
-                );
-
-                newsList.appendChild(
-                    article
-                );
-
-
-                observer.observe(
-                    article
-                );
-
-            }
-        );
-
-    } catch (error) {
-
-        console.error(
-            "NEWS JSON ERROR:",
-            error
-        );
-
-        const t =
-            translations[currentLanguage];
-
-        newsList.innerHTML = `
-            <div class="news-item">
-
-                <div class="news-date">
-                    ERROR
-                </div>
-
-                <div class="news-content">
-
-                    <span class="news-badge">
-                        INFO
-                    </span>
-
-                    <h3>
-                        ${t.newsError}
-                    </h3>
-
-                </div>
-
-            </div>
-        `;
-
+const fullPageTranslations = {
+    ja: {
+        title: "バイナリテックLABO",
+        menu: ["HOME","NEWS","MESSAGE","PHILOSOPHY","ABOUT","PROJECTS","MEMBERS","TECHNOLOGY","LINKS"],
+        menuSmall: "BINARY TECH LABO",
+        menuAria: "メニュー",
+        heroLabel: "BINARY TECH LABO",
+        scroll: "SCROLL",
+        newsLabel: "NEWS",
+        messageLabel: "BINARY TECH LABO / MESSAGE",
+        philosophyLabel: "PHILOSOPHY",
+        aboutLabel: "01 / ABOUT",
+        projectsLabel: "02 / PROJECTS",
+        membersLabel: "03 / MEMBERS",
+        technologyLabel: "04 / TECHNOLOGY",
+        linksLabel: "05 / LINKS",
+        tags: ["JavaScript / Python","HTML / CSS / JS","DATA"],
+        roles: ["DEVELOPER","DEVELOPER"],
+        footer: "© 2026 Binary Tech LABO"
+    },
+    en: {
+        title: "BINARY TECH LABO",
+        menu: ["HOME","NEWS","MESSAGE","PHILOSOPHY","ABOUT","PROJECTS","MEMBERS","TECHNOLOGY","LINKS"],
+        menuSmall: "BINARY TECH LABO",
+        menuAria: "Menu",
+        heroLabel: "BINARY TECH LABO",
+        scroll: "SCROLL",
+        newsLabel: "NEWS",
+        messageLabel: "BINARY TECH LABO / MESSAGE",
+        philosophyLabel: "PHILOSOPHY",
+        aboutLabel: "01 / ABOUT",
+        projectsLabel: "02 / PROJECTS",
+        membersLabel: "03 / MEMBERS",
+        technologyLabel: "04 / TECHNOLOGY",
+        linksLabel: "05 / LINKS",
+        tags: ["JavaScript / Python","HTML / CSS / JS","DATA"],
+        roles: ["DEVELOPER","DEVELOPER"],
+        footer: "© 2026 Binary Tech LABO"
+    },
+    "zh-CN": {
+        title: "BINARY TECH LABO",
+        menu: ["主页","通知","MESSAGE","理念","关于","项目","成员","技术","链接"],
+        menuSmall: "BINARY TECH LABO",
+        menuAria: "菜单",
+        heroLabel: "BINARY TECH LABO",
+        scroll: "滚动",
+        newsLabel: "通知",
+        messageLabel: "BINARY TECH LABO / MESSAGE",
+        philosophyLabel: "理念",
+        aboutLabel: "01 / 关于",
+        projectsLabel: "02 / 项目",
+        membersLabel: "03 / 成员",
+        technologyLabel: "04 / 技术",
+        linksLabel: "05 / 链接",
+        tags: ["JavaScript / Python","HTML / CSS / JS","DATA"],
+        roles: ["开发者","开发者"],
+        footer: "© 2026 Binary Tech LABO"
     }
+};
 
+function applyFullPageTranslations(language){
+    const t = fullPageTranslations[language] || fullPageTranslations.ja;
+    document.title = t.title;
+
+    const menuLinks = document.querySelectorAll(".menu-list a");
+    t.menu.forEach((value, i) => {
+        if(menuLinks[i]) menuLinks[i].textContent = value;
+    });
+
+    const menuSmall = document.querySelector(".menu-small");
+    if(menuSmall) menuSmall.textContent = t.menuSmall;
+
+    const menuButton = document.getElementById("menuButton");
+    if(menuButton) menuButton.setAttribute("aria-label", t.menuAria);
+
+    const heroLabel = document.querySelector(".hero-label");
+    if(heroLabel) heroLabel.textContent = t.heroLabel;
+
+    const heroScroll = document.querySelector(".hero-scroll");
+    if(heroScroll) heroScroll.childNodes[0].nodeValue = "\n            " + t.scroll + "\n        ";
+
+    const labels = document.querySelectorAll(".section-label");
+    const labelValues = [t.newsLabel, t.aboutLabel, t.projectsLabel, t.membersLabel, t.technologyLabel, t.linksLabel];
+    labels.forEach((el,i) => { if(labelValues[i] !== undefined) el.textContent = labelValues[i]; });
+
+    const messageLabel = document.querySelector(".brand-message-label");
+    if(messageLabel) messageLabel.textContent = t.messageLabel;
+
+    const philosophyLabel = document.querySelector(".philosophy-label");
+    if(philosophyLabel) philosophyLabel.textContent = t.philosophyLabel;
+
+    document.querySelectorAll(".project-tag").forEach((el,i) => {
+        if(t.tags[i] !== undefined) el.textContent = t.tags[i];
+    });
+
+    document.querySelectorAll(".member-role").forEach((el,i) => {
+        if(t.roles[i] !== undefined) el.textContent = t.roles[i];
+    });
+
+    const imgs = document.querySelectorAll(".member-image");
+    if(imgs[0]) imgs[0].alt = language === "ja" ? "あお" : language === "en" ? "AO" : "AO";
+    if(imgs[1]) imgs[1].alt = language === "ja" ? "バイナリ" : "Binary";
 }
-
 
 /* =========================================
    LANGUAGE BUTTONS
 ========================================= */
 
-document
-    .querySelectorAll("[data-language]")
-    .forEach(button => {
+document.querySelectorAll(
+    "[data-language]"
+).forEach(button => {
 
-        button.addEventListener(
-            "click",
-            function () {
+    button.addEventListener(
+        "click",
+        function(){
 
-                applyLanguage(
-                    this.dataset.language,
-                    true
-                );
+            applyLanguage(
+                this.dataset.language,
+                true
+            );
 
-            }
-        );
+        }
+    );
 
-    });
+});
 
 
 /* =========================================
