@@ -1,0 +1,15 @@
+[
+  {
+    "date": "2026-09-27",
+    "type": {
+      "ja": "お知らせ",
+      "en": "NEWS",
+      "zh-CN": "通知"
+    },
+    "title": {
+      "ja": "多言語に対応しました",
+      "en": "Multilingual support is now available",
+      "zh-CN": "现已支持多语言"
+    }
+  }
+]
