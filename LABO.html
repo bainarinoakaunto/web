@@ -36,10 +36,8 @@ body {
         "Segoe UI",
         "Noto Sans JP",
         sans-serif;
-
     color: var(--text);
     background: var(--white);
-
     line-height: 1.8;
     overflow-x: hidden;
 }
@@ -60,13 +58,10 @@ button {
 
 .header {
     position: fixed;
-
     top: 0;
     left: 0;
-
     width: 100%;
     height: 88px;
-
     z-index: 2000;
 
     display: flex;
@@ -74,7 +69,6 @@ button {
     justify-content: space-between;
 
     padding: 0 4vw;
-
     color: var(--white);
 
     transition:
@@ -86,11 +80,8 @@ button {
 
 .header.scrolled {
     height: 70px;
-
     color: var(--black);
-
     background: rgba(255,255,255,.94);
-
     backdrop-filter: blur(15px);
 
     box-shadow:
@@ -104,16 +95,13 @@ button {
 
 .logo {
     position: relative;
-
     z-index: 10;
 
     display: flex;
     align-items: center;
-
     gap: 13px;
 
     font-weight: 900;
-
     letter-spacing: .06em;
 }
 
@@ -128,7 +116,6 @@ button {
     border-radius: 50%;
 
     color: var(--white);
-
     background: var(--black);
 
     font-size: 15px;
@@ -140,7 +127,6 @@ button {
 
 .header.scrolled .logo-mark {
     background: var(--purple);
-
     transform: rotate(180deg);
 }
 
@@ -156,7 +142,6 @@ button {
 .header-right {
     display: flex;
     align-items: center;
-
     gap: 25px;
 }
 
@@ -175,7 +160,6 @@ button {
 
     display: flex;
     align-items: center;
-
     gap: 5px;
 
     padding: 5px;
@@ -193,7 +177,6 @@ button {
 
 .language-switcher button {
     border: 0;
-
     background: transparent;
 
     padding: 7px 11px;
@@ -201,9 +184,7 @@ button {
     border-radius: 999px;
 
     font-size: 11px;
-
     font-weight: 700;
-
     letter-spacing: .04em;
 
     color: var(--sub);
@@ -219,7 +200,6 @@ button {
 
 .language-switcher button.active {
     background: var(--black);
-
     color: var(--white);
 }
 
@@ -235,7 +215,6 @@ button {
     height: 48px;
 
     border: 0;
-
     background: transparent;
 
     cursor: pointer;
@@ -252,7 +231,6 @@ button {
 
     display: flex;
     flex-direction: column;
-
     gap: 7px;
 }
 
@@ -292,7 +270,6 @@ button {
 
 .menu-overlay {
     position: fixed;
-
     inset: 0;
 
     z-index: 1900;
@@ -331,7 +308,6 @@ button {
 .menu-inner {
     width: min(1200px, calc(100% - 100px));
     height: 100%;
-
     margin: auto;
 
     display: flex;
@@ -343,7 +319,6 @@ button {
 
     display: flex;
     flex-direction: column;
-
     gap: 12px;
 }
 
@@ -357,15 +332,12 @@ button {
     color: var(--white);
 
     font-size: clamp(38px, 6vw, 82px);
-
     font-weight: 800;
 
     line-height: 1.05;
-
     letter-spacing: -.04em;
 
     transform: translateY(100%);
-
     opacity: 0;
 
     transition:
@@ -376,7 +348,6 @@ button {
 
 .menu-overlay.open .menu-list a {
     transform: translateY(0);
-
     opacity: 1;
 }
 
@@ -424,9 +395,7 @@ button {
     color: rgba(255,255,255,.6);
 
     font-size: 11px;
-
     font-weight: 700;
-
     letter-spacing: .2em;
 }
 
@@ -466,7 +435,6 @@ button {
     content: "";
 
     position: absolute;
-
     inset: 0;
 
     z-index: -1;
@@ -531,9 +499,7 @@ button {
     color: var(--white);
 
     font-size: 14px;
-
     font-weight: 700;
-
     letter-spacing: .08em;
 }
 
@@ -568,13 +534,10 @@ button {
     padding: 7px 15px;
 
     border: 1px solid rgba(255,255,255,.55);
-
     border-radius: 30px;
 
     font-size: 10px;
-
     font-weight: 700;
-
     letter-spacing: .18em;
 }
 
@@ -587,7 +550,6 @@ button {
     line-height: .98;
 
     letter-spacing: -.055em;
-
     font-weight: 900;
 
     text-shadow:
@@ -636,7 +598,6 @@ button {
     gap: 15px;
 
     font-size: 9px;
-
     letter-spacing: .2em;
 
     opacity: .8;
@@ -710,9 +671,7 @@ button {
     color: var(--purple);
 
     font-size: 10px;
-
     font-weight: 800;
-
     letter-spacing: .2em;
 }
 
@@ -727,7 +686,6 @@ button {
     line-height: 1.05;
 
     letter-spacing: -.055em;
-
     font-weight: 900;
 }
 
@@ -755,13 +713,11 @@ button {
     color: var(--sub);
 
     font-size: 16px;
-
     line-height: 2.15;
 }
 
 .brand-message-body strong {
     color: var(--black);
-
     font-weight: 800;
 }
 
@@ -771,7 +727,6 @@ button {
     color: var(--black);
 
     font-size: 20px;
-
     line-height: 1.8;
 
     font-weight: 800;
@@ -823,9 +778,7 @@ button {
     color: var(--purple);
 
     font-size: 11px;
-
     font-weight: 800;
-
     letter-spacing: .08em;
 }
 
@@ -843,15 +796,12 @@ button {
     padding: 4px 10px;
 
     color: var(--white);
-
     background: var(--purple);
 
     border-radius: 20px;
 
     font-size: 9px;
-
     font-weight: 800;
-
     letter-spacing: .08em;
 }
 
@@ -859,7 +809,6 @@ button {
     color: var(--black);
 
     font-size: 20px;
-
     line-height: 1.5;
 
     font-weight: 800;
@@ -892,9 +841,7 @@ button {
     color: var(--purple);
 
     font-size: 10px;
-
     font-weight: 800;
-
     letter-spacing: .2em;
 }
 
@@ -907,7 +854,6 @@ button {
     line-height: 1;
 
     letter-spacing: -.05em;
-
     font-weight: 900;
 }
 
@@ -965,9 +911,7 @@ button {
     color: var(--purple);
 
     font-size: 11px;
-
     font-weight: 800;
-
     letter-spacing: .15em;
 }
 
@@ -977,7 +921,6 @@ button {
     color: var(--black);
 
     font-size: 28px;
-
     font-weight: 900;
 }
 
@@ -985,7 +928,6 @@ button {
     margin-bottom: 12px;
 
     font-size: 22px;
-
     color: var(--black);
 }
 
@@ -1051,7 +993,6 @@ button {
     color: #777785;
 
     font-size: 12px;
-
     font-weight: 800;
 }
 
@@ -1079,7 +1020,6 @@ button {
     border-radius: 20px;
 
     font-size: 9px;
-
     font-weight: 800;
 }
 
@@ -1153,9 +1093,7 @@ button {
     color: var(--purple);
 
     font-size: 10px;
-
     font-weight: 800;
-
     letter-spacing: .15em;
 }
 
@@ -1189,7 +1127,6 @@ button {
     border-bottom: 1px solid var(--black);
 
     font-size: 11px;
-
     font-weight: 800;
 }
 
@@ -1235,7 +1172,6 @@ button {
     border-radius: 3px;
 
     font-size: 12px;
-
     font-weight: 700;
 
     transition:
@@ -1299,7 +1235,6 @@ button {
 
 .link-icon {
     font-size: 25px;
-
     font-weight: 900;
 }
 
@@ -1325,7 +1260,6 @@ button {
     margin-top: 25px;
 
     font-size: 10px;
-
     font-weight: 800;
 }
 
@@ -1965,7 +1899,7 @@ footer {
 
             <p data-i18n-html="messageP1">
                 幅広い業界で、まだ見たことのないアイデアをカタチにし、<br>
-                新しい可能性を切り拓いていく。
+                様々な可能性を切り拓いていく。
             </p>
 
             <br>
@@ -1978,7 +1912,10 @@ footer {
             <br>
 
             <p data-i18n-html="messageP3">
-               テクノロジーの力を使い、<br> <strong>様々な分野で、人を笑顔にする。</strong><br> 日常に新しい価値とワクワクを届ける。 </p>
+                テクノロジーの力を使い、<br>
+                <strong>様々な分野で、人を笑顔にする。</strong><br>
+                日常に新しい価値とワクワクを届ける。
+            </p>
 
         </div>
 
@@ -1986,7 +1923,11 @@ footer {
             class="brand-message-final"
             data-i18n-html="messageFinal"
         >
-            世界を、より便利に。<br> より楽しくするために。<br><br> 様々な可能性を追い求め、<br> 様々な分野で人を笑顔にする。<br><br> 我々は、これからも挑戦を続けます。 </div>
+            世界を、より便利に。<br>
+            より楽しくするために。<br><br>
+            様々な可能性を追い求め、<br>
+            様々な分野で人を笑顔にする。<br><br>
+            我々は、これからも挑戦を続けます。
         </div>
 
     </div>
@@ -2365,7 +2306,6 @@ footer {
 
                 </div>
 
-
                 <img
                     src="ao.png"
                     alt="あお"
@@ -2407,7 +2347,6 @@ footer {
                     </a>
 
                 </div>
-
 
                 <img
                     src="by.png"
@@ -2699,13 +2638,9 @@ const header =
 function updateHeader() {
 
     if (window.scrollY > 60) {
-
         header.classList.add("scrolled");
-
     } else {
-
         header.classList.remove("scrolled");
-
     }
 
 }
@@ -2803,9 +2738,7 @@ document.addEventListener(
     event => {
 
         if (event.key === "Escape") {
-
             closeMenu();
-
         }
 
     }
@@ -2962,16 +2895,16 @@ const translations = {
             "世界を、もっと便利に。<br><span>そして、もっと面白く。</span>",
 
         messageP1:
-            "幅広い業界で、まだ見たことのないアイデアをカタチにし、<br>新しい可能性を切り拓いていく。",
+            "幅広い業界で、まだ見たことのないアイデアをカタチにし、<br>様々な可能性を切り拓いていく。",
 
         messageP2:
             "必要なのは、自由な発想と、<br><strong>「やってみたい」をカタチにする情熱。</strong>",
 
         messageP3:
-            "テクノロジーの力を使い、<br>日常に新しい価値とワクワクを届ける。",
+            "テクノロジーの力を使い、<br><strong>様々な分野で、人を笑顔にする。</strong><br>日常に新しい価値とワクワクを届ける。",
 
         messageFinal:
-            "世界を、より便利に。<br>より楽しくするために。<br><br>私たちは、これからも挑戦を続けます。",
+            "世界を、より便利に。<br>より楽しくするために。<br><br>様々な可能性を追い求め、<br>様々な分野で人を笑顔にする。<br><br>我々は、これからも挑戦を続けます。",
 
         newsLabel:
             "NEWS",
@@ -3195,16 +3128,16 @@ const translations = {
             "Make the world more convenient.<br><span>And make it more interesting.</span>",
 
         messageP1:
-            "Across a wide range of fields, we turn ideas you have never seen before into reality,<br>opening up new possibilities.",
+            "Across a wide range of fields, we turn ideas you have never seen before into reality,<br>opening up a variety of possibilities.",
 
         messageP2:
             "What we need is free thinking and<br><strong>the passion to turn “I want to try it” into reality.</strong>",
 
         messageP3:
-            "Using the power of technology,<br>we bring new value and excitement to everyday life.",
+            "Using the power of technology,<br><strong>we bring smiles to people across a wide range of fields.</strong><br>We bring new value and excitement to everyday life.",
 
         messageFinal:
-            "To make the world more convenient.<br>And more fun.<br><br>We will continue to take on new challenges.",
+            "To make the world more convenient.<br>And more fun.<br><br>We pursue a variety of possibilities,<br>bringing smiles to people across a wide range of fields.<br><br>We will continue to take on new challenges.",
 
         newsLabel:
             "NEWS",
@@ -3428,16 +3361,16 @@ const translations = {
             "让世界更加便利。<br><span>也让世界更加有趣。</span>",
 
         messageP1:
-            "在各种领域中，将前所未见的创意变成现实，<br>不断开拓新的可能性。",
+            "在各种领域中，将前所未见的创意变成现实，<br>不断开拓各种新的可能性。",
 
         messageP2:
             "我们需要的是自由的想象力，<br><strong>以及将“我想试试看”变成现实的热情。</strong>",
 
         messageP3:
-            "运用科技的力量，<br>为日常生活带来新的价值与惊喜。",
+            "运用科技的力量，<br><strong>在各个领域为人们带来笑容。</strong><br>为日常生活带来新的价值与惊喜。",
 
         messageFinal:
-            "让世界更加便利。<br>也让世界更加有趣。<br><br>我们将继续迎接新的挑战。",
+            "让世界更加便利。<br>也让世界更加有趣。<br><br>不断追寻各种可能性，<br>在各个领域为人们带来笑容。<br><br>我们将继续迎接新的挑战。",
 
         newsLabel:
             "通知",
@@ -3610,7 +3543,7 @@ let currentLanguage = "ja";
    LANGUAGE FROM URL
 ========================================= */
 
-function getLanguageFromURL(){
+function getLanguageFromURL() {
 
     const params =
         new URLSearchParams(
@@ -3620,7 +3553,7 @@ function getLanguageFromURL(){
     const language =
         params.get("lang");
 
-    if(translations[language]){
+    if (translations[language]) {
         return language;
     }
 
@@ -3632,7 +3565,7 @@ function getLanguageFromURL(){
    UPDATE URL
 ========================================= */
 
-function updateLanguageURL(language){
+function updateLanguageURL(language) {
 
     const url =
         new URL(window.location.href);
@@ -3660,9 +3593,9 @@ function updateLanguageURL(language){
 function applyLanguage(
     language,
     updateURL = true
-){
+) {
 
-    if(!translations[language]){
+    if (!translations[language]) {
         language = "ja";
     }
 
@@ -3678,10 +3611,8 @@ function applyLanguage(
 
     document.title =
         language === "ja"
-        ? "バイナリテックLABO"
-        : language === "en"
-        ? "BINARY TECH LABO"
-        : "BINARY TECH LABO";
+            ? "バイナリテックLABO"
+            : "BINARY TECH LABO";
 
 
     /* TEXT */
@@ -3693,12 +3624,12 @@ function applyLanguage(
             const key =
                 element.dataset.i18n;
 
-            if(
+            if (
                 Object.prototype.hasOwnProperty.call(
                     t,
                     key
                 )
-            ){
+            ) {
 
                 element.textContent =
                     t[key];
@@ -3717,12 +3648,12 @@ function applyLanguage(
             const key =
                 element.dataset.i18nHtml;
 
-            if(
+            if (
                 Object.prototype.hasOwnProperty.call(
                     t,
                     key
                 )
-            ){
+            ) {
 
                 element.innerHTML =
                     t[key];
@@ -3741,12 +3672,12 @@ function applyLanguage(
             const key =
                 element.dataset.i18nAlt;
 
-            if(
+            if (
                 Object.prototype.hasOwnProperty.call(
                     t,
                     key
                 )
-            ){
+            ) {
 
                 element.alt =
                     t[key];
@@ -3765,12 +3696,12 @@ function applyLanguage(
             const key =
                 element.dataset.i18nAria;
 
-            if(
+            if (
                 Object.prototype.hasOwnProperty.call(
                     t,
                     key
                 )
-            ){
+            ) {
 
                 element.setAttribute(
                     "aria-label",
@@ -3802,7 +3733,7 @@ function applyLanguage(
         });
 
 
-    if(updateURL){
+    if (updateURL) {
 
         updateLanguageURL(
             language
@@ -3812,7 +3743,6 @@ function applyLanguage(
 
 
     renderNewsLoading();
-
     loadNews();
 
 }
@@ -3822,7 +3752,7 @@ function applyLanguage(
    NEWS LOADING
 ========================================= */
 
-function renderNewsLoading(){
+function renderNewsLoading() {
 
     const newsList =
         document.getElementById(
@@ -3861,7 +3791,7 @@ function renderNewsLoading(){
    NEWS JSON
 ========================================= */
 
-async function loadNews(){
+async function loadNews() {
 
     const newsList =
         document.getElementById(
@@ -3876,7 +3806,7 @@ async function loadNews(){
                 Date.now()
             );
 
-        if(!response.ok){
+        if (!response.ok) {
 
             throw new Error(
                 "news.json の取得に失敗しました"
@@ -3888,10 +3818,10 @@ async function loadNews(){
             await response.json();
 
 
-        if(
+        if (
             !Array.isArray(news) ||
             news.length === 0
-        ){
+        ) {
 
             const t =
                 translations[currentLanguage];
@@ -3924,7 +3854,7 @@ async function loadNews(){
 
 
         news.sort(
-            (a,b) =>
+            (a, b) =>
                 new Date(b.date) -
                 new Date(a.date)
         );
@@ -3975,18 +3905,10 @@ async function loadNews(){
                     "news-badge";
 
 
-                /*
-                 * type が
-                 * "INFO"
-                 * または
-                 * {ja:"INFO",en:"INFO",...}
-                 * のどちらでも対応
-                 */
-
-                if(
+                if (
                     item.type &&
                     typeof item.type === "object"
-                ){
+                ) {
 
                     badge.textContent =
                         item.type[currentLanguage] ||
@@ -4048,7 +3970,7 @@ async function loadNews(){
             }
         );
 
-    } catch(error) {
+    } catch (error) {
 
         console.error(
             "NEWS JSON ERROR:",
@@ -4095,7 +4017,7 @@ document
 
         button.addEventListener(
             "click",
-            function(){
+            function () {
 
                 applyLanguage(
                     this.dataset.language,
