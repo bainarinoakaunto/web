@@ -735,6 +735,26 @@ button {
     font-weight: 800;
 }
 
+.news-entry-text {
+    flex-basis: 100%;
+    margin-top: 10px;
+    color: var(--sub);
+    font-size: 13px;
+    line-height: 1.9;
+    overflow-wrap: anywhere;
+}
+
+.news-content {
+    flex-wrap: wrap;
+}
+
+.news-loading,
+.news-error {
+    padding: 25px 0;
+    color: var(--sub);
+    font-size: 13px;
+}
+
 
 /* =========================================
    BRAND MESSAGE
@@ -2072,28 +2092,8 @@ footer {
         </div>
 
 
-        <div class="news-list">
-
-            <article class="news-item reveal">
-
-                <div class="news-date">
-                    2026.09.27
-                </div>
-
-                <div class="news-content">
-
-                    <span class="news-badge">
-                        NEW
-                    </span>
-
-                    <h3>
-                        多言語に対応しました
-                    </h3>
-
-                </div>
-
-            </article>
-
+        <div class="news-list" id="newsList" aria-live="polite">
+            <p class="news-loading" data-news-loading>お知らせを読み込んでいます...</p>
         </div>
 
     </div>
@@ -2739,6 +2739,124 @@ footer {
 
 
 <script>
+
+/* =========================================
+   NEWS JSON LOADER
+   Put news.json in the same folder as this HTML file.
+========================================= */
+
+let newsItems = [];
+
+const newsTypeFallback = {
+    ja: "お知らせ",
+    en: "NEWS",
+    "zh-CN": "通知"
+};
+
+function renderNews(language = "ja") {
+    const list = document.getElementById("newsList");
+    if (!list) return;
+
+    list.replaceChildren();
+
+    if (!newsItems.length) {
+        const message = document.createElement("p");
+        message.className = "news-loading";
+        message.textContent = "ja" === language
+            ? "お知らせはありません。"
+            : language === "zh-CN"
+                ? "暂无通知。"
+                : "There are no announcements.";
+        list.appendChild(message);
+        return;
+    }
+
+    const sortedItems = [...newsItems].sort((a, b) =>
+        String(b.date || "").localeCompare(String(a.date || ""))
+    );
+
+    sortedItems.forEach(item => {
+        const article = document.createElement("article");
+        article.className = "news-item reveal";
+
+        const date = document.createElement("div");
+        date.className = "news-date";
+        date.textContent = item.date
+            ? String(item.date).replace(/^(\d{4})-(\d{2})-(\d{2})$/, "$1.$2.$3")
+            : "";
+
+        const content = document.createElement("div");
+        content.className = "news-content";
+
+        const badge = document.createElement("span");
+        badge.className = "news-badge";
+        badge.textContent =
+            (item.type && (item.type[language] || item.type.ja)) ||
+            newsTypeFallback[language] ||
+            "NEWS";
+
+        const title = document.createElement("h3");
+        title.textContent =
+            (item.title && (item.title[language] || item.title.ja)) ||
+            (language === "zh-CN" ? "未命名通知" : language === "en" ? "Untitled notice" : "タイトル未設定");
+
+        content.append(badge, title);
+
+        const description =
+            item.content && (item.content[language] || item.content.ja);
+
+        if (description) {
+            const paragraph = document.createElement("p");
+            paragraph.className = "news-entry-text";
+            paragraph.textContent = description;
+            content.appendChild(paragraph);
+        }
+
+        article.append(date, content);
+        list.appendChild(article);
+    });
+
+    if (typeof observer !== "undefined" && observer) {
+        list.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+    } else {
+        list.querySelectorAll(".reveal").forEach(el => el.classList.add("visible"));
+    }
+}
+
+async function loadNewsJSON() {
+    const list = document.getElementById("newsList");
+    try {
+        const response = await fetch("news.json", { cache: "no-store" });
+        if (!response.ok) {
+            throw new Error("HTTP " + response.status);
+        }
+
+        const data = await response.json();
+        if (!Array.isArray(data)) {
+            throw new Error("news.json must contain a JSON array.");
+        }
+
+        newsItems = data.filter(item =>
+            item && typeof item === "object" &&
+            item.title && typeof item.title === "object"
+        );
+        renderNews(
+            typeof currentLanguage !== "undefined" ? currentLanguage : "ja"
+        );
+    } catch (error) {
+        console.error("お知らせJSONの読み込みに失敗しました:", error);
+        if (list) {
+            list.replaceChildren();
+            const message = document.createElement("p");
+            message.className = "news-error";
+            message.textContent =
+                "お知らせを読み込めませんでした。news.json の配置とJSON形式を確認してください。";
+            list.appendChild(message);
+        }
+    }
+}
+
+loadNewsJSON();
 
 /* =========================================
    HEADER SCROLL
@@ -3587,15 +3705,7 @@ function applyLanguage(
     ).textContent =
         t.newsDescription;
 
-    document.querySelector(
-        ".news-badge"
-    ).textContent =
-        t.newsBadge;
-
-    document.querySelector(
-        ".news-content h3"
-    ).textContent =
-        t.newsText;
+    renderNews(currentLanguage);
 
 
     /* HERO */
