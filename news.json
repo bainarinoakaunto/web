@@ -1,5 +1,23 @@
 [
   {
+    "date": "2026-10-12",
+    "type": {
+      "ja": "重要なお知らせ",
+      "en": "IMPORTANT NOTICE",
+      "zh-CN": "重要通知"
+    },
+    "title": {
+      "ja": "BinaryTechLabとの関係について",
+      "en": "Notice Regarding Our Relationship with BinaryTechLab",
+      "zh-CN": "关于我们与 BinaryTechLab 的关系"
+    },
+    "content": {
+      "ja": "当サイト「bainariTechLABO」は、BinaryTechLab（https://binarytechlab.com/）とは一切関係ありません。お問い合わせの際は、お問い合わせ先をお間違えのないよう、ご注意ください。",
+      "en": "This website, bainariTechLABO, is not affiliated with BinaryTechLab (https://binarytechlab.com/) in any way. Please make sure you contact the correct organization when making inquiries.",
+      "zh-CN": "本网站 bainariTechLABO 与 BinaryTechLab（https://binarytechlab.com/）没有任何关联。联系时请确认正确的联系对象，以免联系错误。"
+    }
+  },
+  {
     "date": "2026-09-27",
     "type": {
       "ja": "お知らせ",
